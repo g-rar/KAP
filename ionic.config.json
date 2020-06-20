@@ -1,5 +1,7 @@
 {
   "name": "KAPlatform",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
