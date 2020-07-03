@@ -1,0 +1,57 @@
+.divider {
+    display: flex;
+    
+    &:before,
+    &:after {
+      content: "";
+      flex: 1;
+    }
+}
+  
+.line {
+    align-items: center;
+    margin: 1em -1em;
+    color: #cccccc;
+    
+    &:before,
+    &:after {
+      height: 1px;
+      margin: 0 1em;
+    }
+} 
+
+.one-line {
+    &:before,
+    &:after {
+       background: #cccccc;
+    }
+}
+
+.auth-form ion-grid,
+.auth-form ion-row {
+    height: 100%;
+    justify-content: center;
+}
+
+.already {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+
+ion-content.background {
+    --background: url(https://static.zerochan.net/Caster.%28Anastasia.Nikolaevna.Romanova%29.full.2315282.jpg) 0 0/100% 100% no-repeat;
+
+}
+
+.card {
+    background-color: rgb(255, 255, 255); // black
+
+    transform: translateY(-50%);
+    top: 50%;
+    height: 40%;
+    position: absolute;
+    width: 95%;
+
+  }
