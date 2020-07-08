@@ -76,5 +76,8 @@
     "platforms": [
       "android"
     ]
+  },
+  "browser":{
+    "fs": false
   }
 }

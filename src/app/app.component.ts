@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-// import { Web3Service } from './util/web3.service';
+import { Web3Service } from './util/web3.service';
 
 
 declare let require: any;
@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    // private w3 : Web3Service
+    private w3 : Web3Service
   ) {
     this.initializeApp();
   }
@@ -76,17 +76,34 @@ export class AppComponent implements OnInit {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
 
-    //pruebas
-    // this.w3.artifactsToContract(metacoin_artifacts)
-    // .then((MetaCoinAbstraction) => {
-    //   this.MetaCoin = MetaCoinAbstraction;
-    //   this.MetaCoin.deployed().then(deployed => {
-    //     console.log(deployed);
-    //     deployed.Transfer({}, (err, ev) => {
-    //       console.log('Transfer event came in, refreshing balance');
-    //     });
-    //   });
+    this.testFelipe()
+  }
+  
+  testFelipe() {
+    // pruebas
+    this.w3.artifactsToContract(metacoin_artifacts)
+    .then((MetaCoinAbstraction) => {
+      this.MetaCoin = MetaCoinAbstraction;
+      this.testFel2();
+    });
+  }
 
-    // });
+  async testFel2() {
+    try{
+      const deployedMetaCoin = await this.MetaCoin.deployed();
+      console.log("DEPLOYED: ", deployedMetaCoin);
+      
+      const result = await deployedMetaCoin.getTestName.call({});
+      console.log("La vara :v", result);
+            
+      if(result){
+        console.log("CEDULA PAR ALV");
+      } else {
+        console.log("CEDULA IMPAR ALM");
+      }
+    } catch(e) {
+      console.error("Hubo un MEGA ERROR",e);
+    } 
+
   }
 }
