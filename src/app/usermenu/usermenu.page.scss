@@ -1,0 +1,18 @@
+.closeButton{
+    background-color: rgb(255, 255, 255); // white  
+
+}
+.card {
+    background-color: rgb(255, 255, 255); // white
+    transform: translateY(-50%);
+    top: 50%;
+    height: auto;
+    position: relative;
+  }
+
+.item-avatar  {     
+width:100% !important;  
+height : 100% !important;  
+max-width: 100px !important;  //any size
+max-height: 100px !important; //any size 
+}

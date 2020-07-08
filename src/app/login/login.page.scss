@@ -46,12 +46,10 @@ ion-content.background {
 }
 
 .card {
-    background-color: rgb(255, 255, 255); // black
-
+    background-color: rgb(255, 255, 255); // white
     transform: translateY(-50%);
     top: 50%;
-    height: 40%;
-    position: absolute;
-    width: 95%;
-
+    height: auto;
+    position: relative;
   }
+

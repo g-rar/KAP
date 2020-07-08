@@ -1,0 +1,55 @@
+<ion-split-pane contentId="userContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot= "start">
+      <ion-button (click) = "toggleMenu()">
+          <ion-icon slot='icon-only' name="menu" ></ion-icon>
+          
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Usuario</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-menu side="start" menuId="userContent" contentId="main-content" type="overlay">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      <ion-buttons slot='end'>
+        <ion-button shape="round"  (click) = "closeMenu()">
+          <ion-icon slot='icon-only' name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      
+        <ion-item >
+            <ion-avatar class = "item-avatar" slot = "start">
+              <ion-img [src]="user.imageURL"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              {{user.name}}
+            </ion-label>
+        </ion-item>
+
+      
+  
+        
+        <ion-list lines="none">  
+          <ion-menu-toggle *ngFor="let pages of navigate" auto-hide="true">  
+            <ion-item [routerLink]="pages.url" routerDirection="forward">  
+              <ion-icon [name]="pages.icon" slot="start"></ion-icon>  
+              {{pages.title}}   
+            </ion-item>  
+          </ion-menu-toggle>  
+          </ion-list>  
+
+    </ion-content>
+  </ion-menu>
+  <ion-content id="userContent"></ion-content>
+</ion-split-pane>
+
+
