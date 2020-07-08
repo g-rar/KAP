@@ -3,12 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-// import { Web3Service } from './util/web3.service';
-
-
-declare let require: any;
-const metacoin_artifacts = require('../../build/contracts/TestContract.json');
-
 
 @Component({
   selector: 'app-root',
@@ -54,8 +48,7 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    // private w3 : Web3Service
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
   }
@@ -67,26 +60,10 @@ export class AppComponent implements OnInit {
     });
   }
 
-
-  MetaCoin : any;
-
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
-
-    //pruebas
-    // this.w3.artifactsToContract(metacoin_artifacts)
-    // .then((MetaCoinAbstraction) => {
-    //   this.MetaCoin = MetaCoinAbstraction;
-    //   this.MetaCoin.deployed().then(deployed => {
-    //     console.log(deployed);
-    //     deployed.Transfer({}, (err, ev) => {
-    //       console.log('Transfer event came in, refreshing balance');
-    //     });
-    //   });
-
-    // });
   }
 }
