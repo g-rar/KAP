@@ -4,7 +4,7 @@ const Web3 = require('web3');
 import {Web3Service} from './web3.service';
 
 // import testAbi from '../../../build/contracts/TestContract.json';
-let testAbi = require("build/contracts/TestContract.json")
+let testAbi = require("../build/contracts/TestContract.json")
 
 declare let window: any;
 

@@ -9,7 +9,6 @@ import { Web3Service } from './util/web3.service';
 declare let require: any;
 const metacoin_artifacts = require('../../build/contracts/TestContract.json');
 
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -17,6 +16,7 @@ const metacoin_artifacts = require('../../build/contracts/TestContract.json');
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
+
   public appPages = [
     {
       title: 'Inbox',
@@ -84,16 +84,21 @@ export class AppComponent implements OnInit {
     this.w3.artifactsToContract(metacoin_artifacts)
     .then((MetaCoinAbstraction) => {
       this.MetaCoin = MetaCoinAbstraction;
-      this.testFel2();
+      this.MetaCoin.deployed().then(deployed => { 
+        this.testFel2();
+      });
+      
     });
+
   }
 
   async testFel2() {
-    try{
+
       const deployedMetaCoin = await this.MetaCoin.deployed();
       console.log("DEPLOYED: ", deployedMetaCoin);
       
-      const result = await deployedMetaCoin.getTestName.call({});
+      
+      const result = await deployedMetaCoin.getTestName.sendTransaction({from: deployedMetaCoin.address});
       console.log("La vara :v", result);
             
       if(result){
@@ -101,9 +106,6 @@ export class AppComponent implements OnInit {
       } else {
         console.log("CEDULA IMPAR ALM");
       }
-    } catch(e) {
-      console.error("Hubo un MEGA ERROR",e);
-    } 
 
   }
 }
