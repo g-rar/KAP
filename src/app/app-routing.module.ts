@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'usermenu',
     loadChildren: () => import('./usermenu/usermenu.module').then( m => m.UsermenuPageModule)
+  },  {
+    path: 'user-settings',
+    loadChildren: () => import('./user-settings/user-settings.module').then( m => m.UserSettingsPageModule)
   }
+
 
 
 ];
