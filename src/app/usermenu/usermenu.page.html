@@ -38,13 +38,11 @@
       
   
         
-        <ion-list lines="none">  
-          <ion-menu-toggle *ngFor="let pages of navigate" auto-hide="true">  
+        <ion-list lines="none" *ngFor="let pages of navigate">    
             <ion-item [routerLink]="pages.url" routerDirection="forward">  
               <ion-icon [name]="pages.icon" slot="start"></ion-icon>  
               {{pages.title}}   
             </ion-item>  
-          </ion-menu-toggle>  
           </ion-list>  
 
     </ion-content>
