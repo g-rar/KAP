@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
       console.log("DEPLOYED: ", deployedMetaCoin);
       
       
-      const result = await deployedMetaCoin.getTestName.sendTransaction({from: deployedMetaCoin.address});
+      const result = await deployedMetaCoin.getTestName();
       console.log("La vara :v", result);
             
       if(result){
