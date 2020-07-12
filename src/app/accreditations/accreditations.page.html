@@ -34,9 +34,10 @@
     <ion-title tappable  color="primary" (click)="abrirMenu(area.nombre,2)">  <ion-icon name="school-sharp" item-start></ion-icon> {{area.nombre}} </ion-title>
     <ion-list id="{{area.nombre+0}}" *ngIf="area.acreditaciones">
       <ion-item-group  lines="none" >
-        <ion-label tappable (click)="abrirMenu(area.nombre+0,area.acreditaciones.length)" color="secondary" > Acreditaciones</ion-label>
+        <ion-label tappable (click)="abrirMenu(area.nombre+0,area.acreditaciones.length)" color="secondary" > 
+          <ion-icon name="book-sharp" item-start></ion-icon> Acreditaciones</ion-label>
           <ion-item id="{{(area.nombre+0)+a_ai}}"  [routerLink]="['/usermenu']" *ngFor="let a_acr of area.acreditaciones; let a_ai = index">
-            <ion-label >- {{a_acr.nombre}}</ion-label>
+            <ion-label ><ion-icon name="bookmark-sharp" item-start></ion-icon> {{a_acr.nombre}}</ion-label>
           </ion-item> 
       </ion-item-group>
     </ion-list>
@@ -46,10 +47,10 @@
               <ion-label> 
                 <ion-icon name="aperture-sharp" item-start></ion-icon> {{rama.nombre}} </ion-label>
                 <ion-list class="listaSubRama" *ngIf="rama.acreditaciones">
-                  <ion-label  color="tertiary">Acreditaciones</ion-label>
+                  <ion-label  color="tertiary"><ion-icon name="book-sharp" item-start></ion-icon> Acreditaciones</ion-label>
                   
                   <ion-item [routerLink]="['/usermenu']" *ngFor="let r_acr of rama.acreditaciones">
-                      <ion-label>- {{r_acr.nombre}}</ion-label>
+                      <ion-label><ion-icon name="bookmark-sharp" item-start></ion-icon> {{r_acr.nombre}}</ion-label>
                     </ion-item>
                 </ion-list>
               <ion-item-group  class="listaSubRama" lines="none" *ngIf="rama.especializaciones">
@@ -59,9 +60,9 @@
                   <ion-label><ion-icon name="caret-forward-sharp" item-start></ion-icon>{{esp.nombre}}</ion-label>
                   <ion-item-group lines="none" *ngIf="rama.acreditaciones">
                     <ion-list  class="listaSubEsp">
-                      <ion-label color="secondary">Acreditaciones</ion-label>
+                      <ion-label color="success"><ion-icon name="book-sharp" item-start></ion-icon> Acreditaciones</ion-label>
                         <ion-item [routerLink]="['/usermenu']" *ngFor="let e_acr of esp.acreditaciones">
-                          <ion-label>- {{e_acr.nombre}}</ion-label>
+                          <ion-label><ion-icon name="bookmark-sharp" item-start></ion-icon> {{e_acr.nombre}}</ion-label>
                         </ion-item>
                     </ion-list>
                   </ion-item-group>

@@ -14,6 +14,7 @@ export class BusquedaPipe implements PipeTransform {
   }
   acreditaciones:any[]=[];
   acreditacionesR:any[]=[];
+  acreditacionesE:any[]=[];
   areas:any[]=[];
   ramas:any[]=[];
   especializaciones:any[]=[];
@@ -63,25 +64,35 @@ export class BusquedaPipe implements PipeTransform {
             }
             if(rama.especializaciones){
               this.especializaciones=rama.especializaciones.filter(esp=>{
+                this.acreditacionesE=[];
                 //console.log(acreditacion.nombre.toLocaleLowerCase().includes(texto));
                 if(esp.nombre.toLocaleLowerCase().includes(texto)){
                   return true;
                 }
+                if(esp.acreditaciones){
+                  this.acreditacionesE=esp.acreditaciones.filter(acreditacionE=>{
+                    //console.log(acreditacion.nombre.toLocaleLowerCase().includes(texto));
+                    return acreditacionE.nombre.toLocaleLowerCase().includes(texto);  
+                  })
+                  esp.acreditaciones=this.acreditacionesE
+                }
+                if(this.acreditacionesE.length>0){
+                  return true;
+                }
+                return false;
               })
               rama.especializaciones=this.especializaciones;
 
             }
+            
             if((this.especializaciones.length>0) || (this.acreditacionesR.length>0)){
               return true;
             }
             return false;
-            
           })
             area.ramas=this.ramas; 
-            console.log(this.ramas);
         }
         if((this.ramas.length>0) || (this.acreditaciones.length>0)){
-          console.log(area.nombre+"why");
           return true;
         }
         return false;
