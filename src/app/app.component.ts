@@ -12,7 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public user ={
-    imageURL:"http://imagenesparacelulares.net/wp-content/uploads/2016/05/imagenes-de-gatos-para-perfil-whatsapp6.jpg",
+    imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
     name:"Fernanda Ruiz"
   }
   
@@ -24,24 +24,29 @@ export class AppComponent implements OnInit {
     icon  : 'book' 
     },
     { 
-    title : 'Book',  
-    url   : '/usermenu',  
-    icon  : 'book'  
-    },   
+    title : 'Mis acreditaciones',  
+    url   : '/accreditations',  
+    icon  : 'school'  
+    },
+    { 
+      title : 'Crear acreditación',  
+      url   : '/accreditations',  
+      icon  : 'newspaper'  
+      },   
     {  
-    title : 'Configuración',  
+    title : 'Editar perfil',  
     url   : '/user-settings',  
-    icon  : 'settings'   
+    icon  : 'person'   
     },  
     {  
-    title : 'Twitter',  
-    url   : '/contacts',  
-    icon  : 'logo-twitter'  
+    title : 'Cerrar sesión',  
+    url   : '/inicio',  
+    icon  : 'log-out'  
     },   
     {
-    title : 'Facebook',
+    title : 'Acerca de',
     url   : '/facebook.com',
-    icon  : 'logo-facebook'
+    icon  : 'help-circle'
     },
     ];  
   constructor(
