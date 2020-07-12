@@ -29,9 +29,9 @@ export class AppComponent implements OnInit {
     icon  : 'book'  
     },   
     {  
-    title : 'Paint',  
-    url   : '/paint',  
-    icon  : 'brush'   
+    title : 'Configuración',  
+    url   : '/user-settings',  
+    icon  : 'settings'   
     },  
     {  
     title : 'Twitter',  
