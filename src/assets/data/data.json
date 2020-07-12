@@ -1,0 +1,74 @@
+[
+    {
+        "nombre": "Ciencias de la Computación",
+        "ramas":[
+        {
+            "nombre":"Desarrollo de Software",
+            "especializaciones":[
+            {
+                "nombre":"Applied Data Science",
+                "acreditaciones":[
+                    {
+                        "nombre":"Python for Data Science and AI"
+                    },
+                    {
+                        "nombre":"Data Analysis with Python"
+                    }
+                ]
+            },
+            {
+               "nombre":"Google Cloud Platform",
+                "acreditaciones":[
+                    {
+                        "nombre":"Google Cloud Basics"
+                    },
+                    {
+                        "nombre":"Google Cloud II"
+                    }
+                ]
+            }
+            ],
+            "acreditaciones":[
+                {
+                    "nombre":"Deep Learning"
+                },
+                {
+                    "nombre":"Nueral Networks"
+                }
+            ]  
+        },{
+          "nombre":"Algoritmos"
+        }
+        ],
+        "acreditaciones":[
+            {
+                "nombre":"Python Basics"
+            },{
+                "nombre":"C++ Basics"
+            }
+        ]
+    },
+    {
+        "nombre": "Medicina",
+        "acreditaciones":[
+            {
+                "nombre":"Python Basics"
+            },{
+                "nombre":"C++ Basics"
+            }
+        ]
+
+    },
+    {
+        "nombre": "Enseñanza"
+    },
+    {
+        "nombre": "Filosofía"
+    },
+    {
+        "nombre": "Musica"
+    }
+        
+    ]
+
+  

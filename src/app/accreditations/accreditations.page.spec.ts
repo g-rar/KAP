@@ -1,19 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
-import { UsermenuPage } from './usermenu.page';
 
-describe('UsermenuPage', () => {
-  let component: UsermenuPage;
-  let fixture: ComponentFixture<UsermenuPage>;
+import { AccreditationsPage } from './accreditations.page';
+
+
+describe('AccreditationsPage', () => {
+  let component: AccreditationsPage;
+  let fixture: ComponentFixture<AccreditationsPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsermenuPage ],
-      imports: [IonicModule.forRoot(),RouterModule]
+      declarations: [ AccreditationsPage ],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UsermenuPage);
+    fixture = TestBed.createComponent(AccreditationsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

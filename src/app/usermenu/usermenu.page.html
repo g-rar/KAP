@@ -1,17 +1,25 @@
-<ion-split-pane contentId="userContent">
+
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot= "start">
-      <ion-button (click) = "toggleMenu()">
-          <ion-icon slot='icon-only' name="menu" ></ion-icon>
-          
-        </ion-button>
+        <ion-button  [routerLink]="['/usermenu']">KAP </ion-button>
+        <ion-menu-button>
+
+        </ion-menu-button>
+        <ion-title *ngIf="!ios && !showSearchbar">Knowledge Accreditation Platform</ion-title>
+
       </ion-buttons>
-      <ion-title>Usuario</ion-title>
+
+      
 
     </ion-toolbar>
   </ion-header>
-  <ion-menu side="start" menuId="userContent" contentId="main-content" type="overlay">
+
+
+
+  
+
+  <!--ion-menu side="start" menuId="userContent" contentId="main-content" type="overlay">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Start Menu</ion-title>
@@ -47,7 +55,7 @@
 
     </ion-content>
   </ion-menu>
-  <ion-content id="userContent"></ion-content>
-</ion-split-pane>
+  <ion-content id="userContent"></ion-content-->
+
 
 
