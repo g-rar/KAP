@@ -6,6 +6,7 @@ import { rejects } from 'assert';
 import {User} from '../models/User';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,6 +23,8 @@ export class AuthService {
 
   ]
 
+  public actualUser : User;
+
   login(email:string,password:string){
     return new Promise((resolve,rejected)=>{
       const user = {
@@ -29,6 +32,7 @@ export class AuthService {
           user.email === email && user.password === password
         )
       }
+      this.actualUser = user;
       if (Object.keys(user).length === 0){
         rejected(null);
       }

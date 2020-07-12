@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public user ={
     imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
-    name:"Fernanda Ruiz"
+    name: "Maria Juana"
   }
   
   public navigate =   
@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
   ) {
     this.initializeApp();
   }
