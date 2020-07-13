@@ -3,25 +3,65 @@
   <ion-menu side="start" menuId="menuContent" contentId="menu-content" type="overlay">
    
     <ion-content>
-       
-      <ion-item >
-        <ion-avatar class = "item-avatar" slot = "start">
-          <ion-img shape="round" [src]="user.imageURL"></ion-img>
-        </ion-avatar>
-        <ion-label>
-          {{user.name}}
-        </ion-label>
-    </ion-item>
+      <ion-list lines="none">
+        <ion-item class = "perfil">
+          <ion-thumbnail class = "perfilPicture" slot="start">
+            <ion-img shape="round" size="large" [src]="user.imageURL"></ion-img>
+          </ion-thumbnail>
+          <ion-label class = "perfilLabel">
+            {{user.name}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
 
         
-        <ion-list lines="none">  
-          <ion-menu-toggle *ngFor="let pages of navigate" auto-hide="false">  
-            <ion-item [routerLink]="pages.url" routerDirection="forward">  
-              <ion-icon [name]="pages.icon" slot="start"></ion-icon>  
-              <ion-label>{{pages.title}}</ion-label>   
-            </ion-item>  
-          </ion-menu-toggle>  
-          </ion-list>  
+          <ion-list lines="none">
+            <ion-list-header>
+              {{menuName}}
+            </ion-list-header>
+            <ion-menu-toggle autoHide="false" *ngFor="let pages of menu">
+              <ion-item [routerLink]="pages.url" routerLinkActive="selected" routerDirection="root" detail="false">
+                <ion-icon slot="start" [name]="pages.icon"></ion-icon>
+                <ion-label>               
+                  {{pages.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle autoHide="false" *ngIf = "acreditador">
+              <ion-item [routerLink]="crearAcreditacion.url" routerLinkActive="selected" routerDirection="root" detail="false">
+                <ion-icon slot="start" [name]="crearAcreditacion.icon"></ion-icon>
+                <ion-label>               
+                  {{crearAcreditacion.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+          <ion-list lines="none">
+            <ion-list-header>
+              Cuenta
+            </ion-list-header>
+
+            <ion-menu-toggle  autoHide="false">
+              <ion-item button (click)="cambiarUsuario()">
+                <ion-icon slot="start" [name]="cambiarUsr.icon"></ion-icon>
+                <ion-label>               
+                  {{cambiarUsr.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+
+            <ion-menu-toggle autoHide="false" *ngFor="let pages of cuenta">
+              <ion-item [routerLink]="pages.url" routerLinkActive="selected" routerDirection="root" detail="false">
+                <ion-icon slot="start" [name]="pages.icon"></ion-icon>
+                <ion-label>               
+                  {{pages.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+
+
 
     </ion-content>
   </ion-menu>

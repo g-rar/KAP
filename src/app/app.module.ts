@@ -12,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { PipesModule } from './pipes/pipes.module';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

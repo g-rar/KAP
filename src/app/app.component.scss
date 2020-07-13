@@ -1,8 +1,106 @@
+ion-menu ion-content {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+  
+    --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  }
+  
+  /* Remove background transitions for switching themes */
+  ion-menu ion-item {
+    --transition: none;
+  }
+  
+  ion-item.selected {
+    --color: var(--ion-color-primary);
+  }
+  ion-item.perfil {
+    transform: translateY(-20%);
+    top: 70%;
+    height: auto;
+    position: relative;
+  }
+  ion-label.perfilLabel {
+    font-size: 1.2em;
+
+  }
+  ion-thumbnail.perfilPicture {
+    --border-radius: 500px;
+    --size:300px;
+  }
+  
+  /*
+   * Material Design Menu
+  */
+  ion-menu.md ion-list {
+    padding: 20px 0;
+  }
+  
+  ion-menu.md ion-list-header {
+    padding-left: 18px;
+    padding-right: 18px;
+  
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 450;
+  }
+  
+  ion-menu.md ion-item {
+    --padding-start: 18px;
+  
+    margin-right: 10px;
+  
+    border-radius: 0 50px 50px 0;
+  
+    font-weight: 500;
+  }
+  
+  ion-menu.md ion-item.selected {
+    --background: rgba(var(--ion-color-primary-rgb), 0.14);
+  }
+  
+  ion-menu.md ion-item.selected ion-icon {
+    color: var(--ion-color-primary);
+  }
+  
+  ion-menu.md ion-list-header,
+  ion-menu.md ion-item ion-icon {
+    color: var(--ion-color-step-650, #5f6368);
+  }
+  
+  ion-menu.md ion-list:not(:last-of-type) {
+    border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
+  }
+  
+  
+  /*
+   * iOS Menu
+  */
+  ion-menu.ios ion-list-header {
+    padding-left: 16px;
+    padding-right: 16px;
+  
+    margin-bottom: 8px;
+  }
+  
+  ion-menu.ios ion-list {
+    padding: 20px 0 0;
+  }
+  
+  ion-menu.ios ion-item {
+    --padding-start: 16px;
+    --min-height: 50px;
+  }
+  
+  ion-menu.ios ion-item ion-icon {
+    font-size: 24px;
+    color: #73849a;
+  }
+  
+  ion-menu.ios ion-item.selected ion-icon {
+    color: var(--ion-color-primary);
+  }
 
 
-.item-avatar  {       
-min-width: 85px;
-min-height:85px ;
-max-width: 100px !important;  //any size
-max-height: 100px !important; //any size 
-}
+
+  
+
