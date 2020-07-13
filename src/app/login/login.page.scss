@@ -41,17 +41,15 @@
 }
 
 ion-content.background {
-    --background: url(https://i.pinimg.com/564x/e9/67/10/e967101ed1b4255a2f8ebd3632ffd3da.jpg) 0 0/100% 100% no-repeat;
+    --background: url(https://www.wallpapertip.com/wmimgs/3-33420_iphone-wallpaper-minimalist.jpg) 0 0/100% 100% no-repeat;
 
 }
 
 .card {
-    background-color: rgb(255, 255, 255); // black
-
+    background-color: rgb(255, 255, 255); // white
     transform: translateY(-50%);
     top: 50%;
-    height: 40%;
-    position: absolute;
-    width: 95%;
-
+    height: auto;
+    position: relative;
   }
+

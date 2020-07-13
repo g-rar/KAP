@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -22,7 +23,21 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'usermenu',
+    loadChildren: () => import('./usermenu/usermenu.module').then( m => m.UsermenuPageModule)
+  },
+  {
+    path: 'user-settings',
+    loadChildren: () => import('./user-settings/user-settings.module').then( m => m.UserSettingsPageModule)
+  },
+  {
+    path: 'accreditations',
+    loadChildren: () => import('src/app/accreditations/accreditations.module').then( m => m.AccreditationsPageModule)
   }
+
+
 
 
 ];
@@ -34,3 +49,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+

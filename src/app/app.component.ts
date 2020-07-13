@@ -11,44 +11,48 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  public appPages = [
-    {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+  public user ={
+    imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
+    name: "Maria Juana"
+  }
+  
+  public navigate =   
+    [  
+    { 
+    title : 'Acreditaciones',
+    url   : '/accreditations',
+    icon  : 'book' 
     },
-    {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+    { 
+    title : 'Mis acreditaciones',  
+    url   : '/accreditations',  
+    icon  : 'school'  
     },
+    { 
+      title : 'Crear acreditación',  
+      url   : '/accreditations',  
+      icon  : 'newspaper'  
+      },   
+    {  
+    title : 'Editar perfil',  
+    url   : '/user-settings',  
+    icon  : 'person'   
+    },  
+    {  
+    title : 'Cerrar sesión',  
+    url   : '/inicio',  
+    icon  : 'log-out'  
+    },   
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+    title : 'Acerca de',
+    url   : '/facebook.com',
+    icon  : 'help-circle'
     },
-    {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
-    },
-    {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
-    }
-  ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-
+    ];  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
   ) {
     this.initializeApp();
   }
@@ -61,9 +65,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
+
   }
 }

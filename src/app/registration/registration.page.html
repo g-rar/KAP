@@ -9,32 +9,32 @@
 
 <ion-content padding class="background">
   <ion-card class="card">
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">First name</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Last name</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
-
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Sign Up</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
-</ion-card>
+    <form [formGroup]="RegisterForm">
+      <ion-item lines="full">
+        <ion-label position="floating">First name</ion-label>
+        <ion-input formControlName="fName" type="text" required></ion-input>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-label position="floating">Last name</ion-label>
+        <ion-input formControlName="lName" type="text" required></ion-input>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" required></ion-input>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+      </ion-item>
+  
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" (click)="onSubmitRegister(RegisterForm.value)" expand="block">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card>
 </ion-content>
