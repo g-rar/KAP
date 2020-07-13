@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -12,50 +12,80 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public user ={
-    imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
-    name: "Maria Juana"
+    imageURL:"http://imagenesparacelulares.net/wp-content/uploads/2016/05/imagenes-de-gatos-para-perfil-whatsapp6.jpg",
+    name:"Fernanda Ruiz"
   }
   
-  public navigate =   
+  public menu =   
     [  
     { 
     title : 'Acreditaciones',
     url   : '/accreditations',
-    icon  : 'book' 
+    icon  : 'book-outline' 
+    imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
     },
     { 
-    title : 'Mis acreditaciones',  
-    url   : '/accreditations',  
-    icon  : 'school'  
-    },
-    { 
-      title : 'Crear acreditación',  
-      url   : '/accreditations',  
-      icon  : 'newspaper'  
-      },   
+    title : 'Tutorial',  
+    url   : '/tutorial-acreditador',  
+    icon  : 'document-outline'  
+    }]
+  public cuenta= [   
     {  
-    title : 'Editar perfil',  
+    title : 'Configuración',  
     url   : '/user-settings',  
-    icon  : 'person'   
+    icon  : 'settings-outline'   
     },  
     {  
-    title : 'Cerrar sesión',  
+    title : 'Logout',  
     url   : '/inicio',  
-    icon  : 'log-out'  
-    },   
-    {
-    title : 'Acerca de',
-    url   : '/facebook.com',
-    icon  : 'help-circle'
-    },
+    icon  : 'log-out-outline'  
+    }
     ];  
+  public cambiarUsr ={
+    title : 'Cambiar a Acreditador',
+    icon  : 'person-outline'
+    }
+  public crearAcreditacion = {
+    title : 'Crear Acreditación',  
+    url   : '/crear-acreditacion',  
+    icon  : 'add-outline'  
+  }
+  private acreditador = true;
+  protected menuName = "Acreditador";
+  protected tutorial
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
+    public navCtrl: NavController
   ) {
     this.initializeApp();
   }
+
+  cambiarUsuario(){
+    if(this.acreditador){
+      this.cambiarUsr.title='Cambiar a Acreditador';
+      this.menuName='Aspirante';
+      this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
+      this.navCtrl.navigateRoot(['/tutorial-aspirante']);
+      this.acreditador = false;
+      }
+     
+      else{
+          this.cambiarUsr.title='Cambiar a Aspirante';
+          this.menuName='Acreditador'
+          this.menu.find(element => element.title == "Tutorial").url="/tutorial-acreditador"
+          this.navCtrl.navigateRoot(['/tutorial-acreditador']);
+          this.acreditador=true
+      }
+
+    }
+
+    
+
+
+  
 
   initializeApp() {
     this.platform.ready().then(() => {
