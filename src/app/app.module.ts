@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UtilModule } from './util/util.module';
 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { PipesModule } from './pipes/pipes.module';
@@ -22,7 +23,8 @@ import { PipesModule } from './pipes/pipes.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PipesModule
+    PipesModule,
+    UtilModule
   ],
   providers: [
     StatusBar,

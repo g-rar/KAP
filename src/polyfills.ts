@@ -64,3 +64,12 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+//import Fs from 'fs';
+
+(window as any).global = window;
+//(window as any).global.Buffer = (window as any).global.Buffer || require('buffer').Buffer;
+
+//global.process = require('process');
+//global.process.versions = {zlib: undefined, modules: undefined, openssl: undefined, http_parser: undefined, v8: undefined, ares: undefined, uv: undefined, node: '11.2.0'};
+
+//let fs: typeof Fs = window['require']('fs');
