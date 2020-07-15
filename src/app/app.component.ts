@@ -94,12 +94,20 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("HERE");
-    
     this.testFelipe();
   }
-  async testFelipe() {
 
+  async testFelipe() {
+    await this.blockchain.initContracts();
+    await this.blockchain.agregarUsuario({
+      apellidos: "Lopez",
+      cedula: "111111",
+      contrasenna: "Berune",
+      correoElectronico: "baz@gmail.com",
+      nombre: "Gerado",
+      numeroTelefonico: "77774444",
+      redesSociales: ["Facebook: felipepace09", "Instragram: felipepace09"],
+    });
     console.log(await this.blockchain.getUsuarios());
   }
 
