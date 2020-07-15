@@ -42,7 +42,16 @@ export class BlockchainService {
   }
 
   async test() {
-    var res = await this.contratoUsuario.getUsuarios.call();
+    var res = await this.contratoUsuario.agregarUsuario.sendTransaction(
+    {apellidos: "Abarca",
+    cedula: "111111",
+    contrasenna: "Berune",
+    correoElectronico: "baz@gmail.com",
+    nombre: "Bernold",
+    numeroTelefonico: "77774444",
+    redesSociales: ["Facebook: felipepace09", "Instragram: felipepace09"],
+  }, {from: "0x8DB1ffe4aEBd068AA8a2C41244A5016cb5591d9F"});
+    var res = await this.contratoUsuario.getUsuarios();
     console.log(res);
   }
 
