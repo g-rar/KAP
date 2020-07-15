@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
     }]
   public cuenta= [   
     {  
+
     title : 'Configuración',  
     url   : '/user-settings',  
     icon  : 'settings-outline'   
@@ -93,11 +94,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("HERE");
+    
     this.testFelipe();
   }
-
   async testFelipe() {
-    if(this.blockchain)
+
     console.log(await this.blockchain.getUsuarios());
   }
 
