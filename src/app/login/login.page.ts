@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
         this.appComponent.user.name = this.authService.actualUser.first_name + " " + this.authService.actualUser.last_name;
         this.router.navigate(['/tutorial-acreditador'])
 
-    }).catch(err => this.alertService.presentAlert("Error signing into the account","Email or password is wrong"));
+    }).catch(err => this.alertService.presentAlert("Error al iniciar sesión","Email o contraseña incorrectos"));
     
   }
 
