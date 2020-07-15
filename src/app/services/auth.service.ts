@@ -3,8 +3,6 @@ import { LoginPage } from '../login/login.page';
 import {Acreditador} from '../../models/acreditador'
 import {Aspirante} from '../../models/aspirante'
 import { rejects } from 'assert';
-import {User} from '../models/User';
-
 
 
 @Injectable({
@@ -13,17 +11,13 @@ import {User} from '../models/User';
 export class AuthService {
 
   constructor() { }
-  private users :  User[]= [
+  private users = [
     {
-      first_name : "hola",
-      last_name : "hola",
       email: "hola@gmail.com",
       password: "password",
     }
 
   ]
-
-  public actualUser : User;
 
   login(email:string,password:string){
     return new Promise((resolve,rejected)=>{
@@ -32,7 +26,6 @@ export class AuthService {
           user.email === email && user.password === password
         )
       }
-      this.actualUser = user;
       if (Object.keys(user).length === 0){
         rejected(null);
       }
@@ -40,17 +33,11 @@ export class AuthService {
 
 
     })
-  }
 
-  register(fName: string, lName: string, email: string, password: string) {
-    this.users.push(
-      {
-      first_name :fName,
-      last_name :lName,
-      email,
-      password,
-      }
-    )
+
+
+
+
   }
 
   

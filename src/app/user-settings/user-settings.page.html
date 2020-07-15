@@ -5,21 +5,19 @@
     </ion-buttons>
     <ion-title mode=ios>Editar perfil</ion-title>
     <ion-buttons slot="end">
-      <ion-button color="primary"> Listo </ion-button>
+      <ion-button> Listo </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
     <ion-avatar class = "avatar">
       <img src="https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg">
     </ion-avatar>
     <div class="ion-text-center">
-      <a [routerLink]="['/forgot-password']" class="small-text">Cambiar foto</a>
+      <ion-label>Cambiar foto</ion-label>
     </div>
     <span class="divider line one-line"></span>
-    <ion-label color="primary">Información General</ion-label>
   <ion-item>
     <ion-label position="fixed">Nombre:</ion-label>
     <ion-input></ion-input>
@@ -30,12 +28,6 @@
   </ion-item>
   <ion-item>
     <ion-label position="fixed">Email:</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <span class="divider line one-line"></span>
-  <ion-label color="primary">Información privada</ion-label>
-  <ion-item>
-    <ion-label position="fixed">Contraseña:</ion-label>
     <ion-input></ion-input>
   </ion-item>
 

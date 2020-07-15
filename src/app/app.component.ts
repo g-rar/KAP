@@ -22,8 +22,12 @@ export class AppComponent implements OnInit {
     title : 'Acreditaciones',
     url   : '/accreditations',
     icon  : 'book-outline' 
-    imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
     },
+    { 
+      title : 'Mis acreditaciones',
+      url   : '/contacts',
+      icon  : 'book-outline' 
+      },
     { 
     title : 'Tutorial',  
     url   : '/tutorial-acreditador',  
