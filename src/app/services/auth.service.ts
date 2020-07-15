@@ -21,11 +21,21 @@ export class AuthService {
       telefono : "12345678",
       email: "hola@gmail.com",
       password: "password",
+      redes : [""]
     }
 
   ]
 
-  public actualUser : User;
+  public actualUser : User = 
+  {
+    first_name : "hola",
+    last_name : "hola",
+    cedula : "12345678",
+    telefono : "12345678",
+    email: "hola@gmail.com",
+    password: "password",
+    redes : [""]
+  };
 
   login(email:string,password:string){
     return new Promise((resolve,rejected)=>{
@@ -53,8 +63,29 @@ export class AuthService {
       telefono,
       email,
       password,
+      redes : [""]
       }
     )
+  }
+
+  actualizarUser(fName: string, lName: string,cedula: string, telefono : string,redes : string , email: string, password: string){
+    this.actualUser = {
+      first_name :fName,
+      last_name :lName,
+      cedula,
+      telefono,
+      email,
+      password,
+      redes : [redes]
+      }
+    /*
+    const i = this.users.findIndex(user=>
+      user.cedula === cedula
+    )
+    delete this.users[i];
+    this.users.push( this.actualUser);*/
+      
+
   }
 
   

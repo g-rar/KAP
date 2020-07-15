@@ -5,4 +5,5 @@ export interface User {
     telefono : string;
     email: string;
     password : string;
+    redes : string[];
 }
