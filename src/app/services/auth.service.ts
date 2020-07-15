@@ -17,6 +17,8 @@ export class AuthService {
     {
       first_name : "hola",
       last_name : "hola",
+      cedula : "12345678",
+      telefono : "12345678",
       email: "hola@gmail.com",
       password: "password",
     }
@@ -42,11 +44,13 @@ export class AuthService {
     })
   }
 
-  register(fName: string, lName: string, email: string, password: string) {
+  register(fName: string, lName: string,cedula: string, telefono : string, email: string, password: string) {
     this.users.push(
       {
       first_name :fName,
       last_name :lName,
+      cedula,
+      telefono,
       email,
       password,
       }

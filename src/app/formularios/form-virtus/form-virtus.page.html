@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Evaluación de la acreditación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <ion-card class="card">
+    <form  [formGroup]="loginForm">
+    <ion-item>
+      <ion-label position="floating" color="dark">Claridad en los contenidos</ion-label>
+      <ion-range min="1" max="5" step="1" value="3" snaps pin color="dark" formControlName="uno">
+        <ion-icon slot="start" size="small" color="success" name="leaf"></ion-icon>
+        <ion-icon slot="end" size="large" color="success" name="leaf"></ion-icon>
+      </ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="dark">Eficacia en instrumentos de evaluación</ion-label>
+      <ion-range min="1" max="5" step="1" value="3" snaps pin color="dark" formControlName="dos">
+        <ion-icon slot="start" size="small" color="success" name="leaf"></ion-icon>
+        <ion-icon slot="end" size="large" color="success" name="leaf"></ion-icon>
+      </ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="dark">Credibilidad</ion-label>
+      <ion-range min="1" max="5" step="1" value="3" snaps pin color="dark" formControlName="tres">
+        <ion-icon slot="start" size="small" color="success" name="leaf"></ion-icon>
+        <ion-icon slot="end" size="large" color="success" name="leaf"></ion-icon>
+      </ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="dark">Objetividad</ion-label>
+      <ion-range min="1" max="5" step="1" value="3" snaps pin color="dark" formControlName="cuatro">
+        <ion-icon slot="start" size="small" color="success" name="leaf"></ion-icon>
+        <ion-icon slot="end" size="large" color="success" name="leaf"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </form>
+    <ion-button (click)="presentAlert(loginForm.value)" expand="block" color="danger">Enviar</ion-button>
+  </ion-card>
+</ion-content>
