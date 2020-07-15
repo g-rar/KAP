@@ -11,6 +11,9 @@ export abstract class User {
     private _verificado?:boolean;
     private _cedula?:number
 
+
+
+    
     constructor(correo:string){
         this._correo=correo;
     }
