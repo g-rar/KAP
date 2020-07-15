@@ -24,7 +24,7 @@
     <ion-row>
       <ion-col>
         <ion-button [disabled]="!loginForm.valid" (click)="onSubmitLogin(loginForm.value)" color="danger" expand="block">Sign In</ion-button>
-        <ion-label class="forgotPassword" [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</ion-label>
+        <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
       </ion-col>
     </ion-row>
 
