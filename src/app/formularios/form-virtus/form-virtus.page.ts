@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class FormVirtusPage implements OnInit {
   loginForm:any;
+  
 
   constructor(public alertController: AlertController, public router: Router, private formBuilder : FormBuilder) { }
 
@@ -25,7 +26,7 @@ export class FormVirtusPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Acreditación evaluada',
-      message: 'Haz dado ' + (formValue.uno + formValue.dos + formValue.tres + formValue.cuatro) + ' 🍃',
+      message: 'Has dado ' + (formValue.uno + formValue.dos + formValue.tres + formValue.cuatro) + ' 🍃',
       buttons: ['Aceptar']
     });
     await alert.present();
