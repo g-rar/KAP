@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { NavController } from '@ionic/angular';
+import { BlockchainService } from './services/blockchain/blockchain.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -58,7 +59,8 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    private blockchain: BlockchainService
   ) {
     this.initializeApp();
   }
@@ -83,10 +85,6 @@ export class AppComponent implements OnInit {
     }
 
     
-
-
-  
-
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
@@ -95,7 +93,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.testFelipe();
+  }
 
+  async testFelipe() {
+    if(this.blockchain)
+    console.log(await this.blockchain.getUsuarios());
   }
 
   /*
