@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginPage } from '../login/login.page';
-import {Acreditador} from '../../models/acreditador'
-import {Aspirante} from '../../models/aspirante'
 import { rejects } from 'assert';
-import {User} from '../models/User';
+import {User} from '../../models/User';
 
 
 
