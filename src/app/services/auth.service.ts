@@ -68,7 +68,7 @@ export class AuthService {
     )
   }
 
-  actualizarUser(fName: string, lName: string,cedula: string, telefono : string,redes : string , email: string, password: string){
+  actualizarUser(fName: string, lName: string,email: string, telefono : string,redes : string , password: string, cedula: string){
     this.actualUser = {
       first_name :fName,
       last_name :lName,
