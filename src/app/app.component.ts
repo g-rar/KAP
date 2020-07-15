@@ -12,7 +12,7 @@ import { NavController } from '@ionic/angular';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public user ={
-    imageURL:"http://imagenesparacelulares.net/wp-content/uploads/2016/05/imagenes-de-gatos-para-perfil-whatsapp6.jpg",
+    imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
     name:"Fernanda Ruiz"
   }
   
@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
     { 
     title : 'Acreditaciones',
     url   : '/accreditations',
-    icon  : 'book-outline', 
-    imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
+
+    icon  : 'book-outline' 
     },
     { 
     title : 'Tutorial',  
@@ -31,12 +31,12 @@ export class AppComponent implements OnInit {
     }]
   public cuenta= [   
     {  
-    title : 'Configuración',  
+    title : 'Editar Perfil',  
     url   : '/user-settings',  
     icon  : 'settings-outline'   
     },  
     {  
-    title : 'Logout',  
+    title : 'Cerrar sesión',  
     url   : '/inicio',  
     icon  : 'log-out-outline'  
     }
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     url   : '/crear-acreditacion',  
     icon  : 'add-outline'  
   }
-  private acreditador = true;
+  public acreditador = true;
   protected menuName = "Acreditador";
   protected tutorial
 

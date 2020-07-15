@@ -4,10 +4,8 @@ ion-content.background {
 }
 
 .card {
-
     transform: translateY(-50%);
     top: 50%;
+    height: auto;
     position: relative;
-    width: 95%;
-
   }

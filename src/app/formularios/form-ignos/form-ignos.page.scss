@@ -1,0 +1,20 @@
+ion-content.background {
+    --background: url(https://www.wallpapertip.com/wmimgs/3-33420_iphone-wallpaper-minimalist.jpg) 0 0/100% 100% no-repeat;
+
+}
+
+.card {
+    transform: translateY(-50%);
+    top: 50%;
+    height: auto;
+    position: relative;
+  }
+
+  .ion-color-flama {
+    --ion-color-base: #ff33008e;
+    --ion-color-base-rgb: #69bb7b;
+    --ion-color-contrast: #69bb7b;
+    --ion-color-contrast-rgb: #69bb7b;
+    --ion-color-shade: #ddad0d;
+    --ion-color-tint: #d88d02;
+  }

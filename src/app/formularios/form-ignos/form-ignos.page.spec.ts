@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PrincipalPage } from './principal.page';
+import { FormIgnosPage } from './form-ignos.page';
 
-describe('PrincipalPage', () => {
-  let component: PrincipalPage;
-  let fixture: ComponentFixture<PrincipalPage>;
+describe('FormIgnosPage', () => {
+  let component: FormIgnosPage;
+  let fixture: ComponentFixture<FormIgnosPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrincipalPage ],
+      declarations: [ FormIgnosPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PrincipalPage);
+    fixture = TestBed.createComponent(FormIgnosPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

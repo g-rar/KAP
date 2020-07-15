@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="inicio"></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title>Registrarse</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,13 +11,23 @@
   <ion-card class="card">
     <form [formGroup]="RegisterForm">
       <ion-item lines="full">
-        <ion-label position="floating">First name</ion-label>
+        <ion-label position="floating">Nombre</ion-label>
         <ion-input formControlName="fName" type="text" required></ion-input>
       </ion-item>
   
       <ion-item lines="full">
-        <ion-label position="floating">Last name</ion-label>
+        <ion-label position="floating">Apellidos</ion-label>
         <ion-input formControlName="lName" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Cédula</ion-label>
+        <ion-input formControlName="cedula" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input formControlName="telefono" type="text" required></ion-input>
       </ion-item>
   
       <ion-item lines="full">
@@ -26,13 +36,13 @@
       </ion-item>
   
       <ion-item lines="full">
-        <ion-label position="floating">Password</ion-label>
+        <ion-label position="floating">Contraseña</ion-label>
         <ion-input formControlName="password" type="password" required></ion-input>
       </ion-item>
   
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" (click)="onSubmitRegister(RegisterForm.value)" expand="block">Sign Up</ion-button>
+          <ion-button type="submit" color="danger" (click)="onSubmitRegister(RegisterForm.value)" expand="block">Crear cuenta</ion-button>
         </ion-col>
       </ion-row>
     </form>
