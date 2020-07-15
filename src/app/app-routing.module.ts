@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'accreditations',
-    loadChildren: () => import('src/app/accreditations/accreditations.module').then( m => m.AccreditationsPageModule)
+    loadChildren: () => import('./accreditations/accreditations.module').then( m => m.AccreditationsPageModule)
   },
   {
     path: 'tutorial-acreditador',
