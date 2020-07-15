@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title mode=ios>Editar perfil</ion-title>
     <ion-buttons slot="end">
-      <ion-button color="primary"> Listo </ion-button>
+      <ion-button (click)="actualizarUser()" color="primary"> Listo </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -22,21 +22,35 @@
     <ion-label color="primary">Información General</ion-label>
   <ion-item>
     <ion-label position="fixed">Nombre:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="user_name"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="fixed">Apellidos:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="user_apellidos"></ion-input>
   </ion-item>
+  <span class="divider line one-line"></span>
+  <ion-label color="primary">Información de contacto</ion-label>
   <ion-item>
     <ion-label position="fixed">Email:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="user_email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Teléfono:</ion-label>
+    <ion-input [(ngModel)]="user_telefono"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed" class="ion-text-wrap">Redes Sociales:</ion-label>
+    <ion-input [(ngModel)]="user_redes"></ion-input>
   </ion-item>
   <span class="divider line one-line"></span>
   <ion-label color="primary">Información privada</ion-label>
   <ion-item>
     <ion-label position="fixed">Contraseña:</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="user_contrasena"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Cédula:</ion-label>
+    <ion-input [(ngModel)]="user_cedula" disabled="true"></ion-input>
   </ion-item>
 
 </ion-content>

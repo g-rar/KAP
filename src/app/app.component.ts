@@ -30,12 +30,12 @@ export class AppComponent implements OnInit {
     }]
   public cuenta= [   
     {  
-    title : 'Configuración',  
+    title : 'Editar Perfil',  
     url   : '/user-settings',  
     icon  : 'settings-outline'   
     },  
     {  
-    title : 'Logout',  
+    title : 'Cerrar sesión',  
     url   : '/inicio',  
     icon  : 'log-out-outline'  
     }
@@ -96,4 +96,35 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  /*
+  testPromise():Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+
+      //hace un buen par de cosas aqui que pueden tomar mucho tiempo
+      if(false){
+        resolve('hola mundo')
+      } else {
+        reject('Fallo')
+      }
+
+    })
+  }
+
+  usePromise(){
+    //esto se hace primero
+    console.log("se va a llamar la promesa");
+    //se pone a correr la funcion
+    this.testPromise().then((result) => {
+      //se ejecuta hasta que se resuelva la promesa
+      console.log(result);
+    }).catch((error) => {
+      //se ejecuta si la promesa rechaza
+      console.error(error);
+    })
+    //esto en una promesa que tarde mas tiempo se imprimiria de segundo
+    console.log("la promesa no ha terminado");
+    
+  }
+  */
 }

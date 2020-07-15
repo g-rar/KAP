@@ -47,7 +47,15 @@ const routes: Routes = [
   {
     path: 'crear-acreditacion',
     loadChildren: () => import('./crear-acreditacion/crear-acreditacion.module').then( m => m.CrearAcreditacionPageModule)
+  },  {
+    path: 'form-ignos',
+    loadChildren: () => import('./formularios/form-ignos/form-ignos.module').then( m => m.FormIgnosPageModule)
+  },
+  {
+    path: 'form-virtus',
+    loadChildren: () => import('./formularios/form-virtus/form-virtus.module').then( m => m.FormVirtusPageModule)
   }
+
 
 
 
