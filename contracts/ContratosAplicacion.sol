@@ -6,27 +6,27 @@ contract ServiciosUsuario {
     mapping(uint256 => uint256) usuariosMap;
 
     struct Usuario {
-        string nombre;
-        string apellidos;
-        string contrasenna;
-        string correoElectronico;
-        uint256 numeroTelefonico;
-        string[] redesSociales;
+        string first_name;
+        string last_name;
+        string password;
+        string email;
+        uint256 telefono;
+        string[] redes;
         uint256 cedula;
     }
 
     constructor() public {
         Usuario memory usuario_;
 
-        usuario_.nombre = "Felipe Pacheco";
-        usuario_.apellidos = "Pacheco Cerdas";
-        usuario_.contrasenna = "felpudo";
-        usuario_.correoElectronico = "felipepace09@gmail.com";
-        usuario_.numeroTelefonico = 85858585;
+        usuario_.first_name = "Felipe Pacheco";
+        usuario_.last_name = "Pacheco Cerdas";
+        usuario_.password = "felpudo";
+        usuario_.email = "felipepace09@gmail.com";
+        usuario_.telefono = 85858585;
         string[] memory rrss = new string[](2);
         rrss[0] = "Facebook: felipepace09";
         rrss[1] = "Instragram: felipe09";
-        usuario_.redesSociales = rrss;
+        usuario_.redes = rrss;
         usuario_.cedula = 305280872;
 
         usuariosMap[usuario_.cedula] = usuarios.length;

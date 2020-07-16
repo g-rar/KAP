@@ -11,8 +11,14 @@ export class AuthService {
 
   constructor(private blockChain: BlockchainService) { 
     if(!blockChain.terminado){
-      blockChain.initContracts();
+      blockChain.initContracts().then(() => this.getUsuarios());
+    } else {
+      this.getUsuarios();
     }
+  }
+
+  private async getUsuarios() {
+    this.users = await this.blockChain.getUsuarios();
   }
 
   private users :  User[]= [
@@ -57,8 +63,7 @@ export class AuthService {
   }
 
   register(fName: string, lName: string,cedula: string, telefono : string, email: string, password: string) {
-    this.users.push(
-      {
+    let newUser = {
       first_name :fName,
       last_name :lName,
       cedula,
@@ -66,8 +71,9 @@ export class AuthService {
       email,
       password,
       redes : [""]
-      }
-    )
+    }
+    this.users.push(newUser);
+    this.blockChain.agregarUsuario(newUser);
   }
 
   actualizarUser(fName: string, lName: string,email: string, telefono : string,redes : string , password: string, cedula: string){
@@ -79,7 +85,7 @@ export class AuthService {
       email,
       password,
       redes : [redes]
-      }
+    }
     /*
     const i = this.users.findIndex(user=>
       user.cedula === cedula

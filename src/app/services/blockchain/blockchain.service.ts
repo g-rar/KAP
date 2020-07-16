@@ -28,7 +28,9 @@ export class BlockchainService {
   /* Usuario */
 
   async agregarUsuario(usuario) {
-    await this.contratoUsuario.agregarUsuario.sendTransaction(usuario, {from: "0x156F98047b61385febEe2b5Cb67f2d975809D8b6"});
+    await this.contratoUsuario.agregarUsuario.sendTransaction(usuario, {from: "0xf56800189745Faa6Ca3291150C90f5030A9E3259"}).then((result) => {
+      console.log(result);
+    });
   }
 
   async getUsuarios() {

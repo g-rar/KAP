@@ -28,6 +28,8 @@ export class RegistrationPage implements OnInit {
   }
 
   onSubmitRegister(formValue){
+    console.log(formValue);
+    
     this.authService.register(formValue.fName,formValue.lName,formValue.cedula,formValue.telefono, formValue.email,formValue.password);
     this.router.navigate(['/login']);
     
