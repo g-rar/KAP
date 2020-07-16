@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PrincipalPageRoutingModule } from './principal-routing.module';
+import { AccreditationPageRoutingModule } from './accreditation-routing.module';
 
-import { PrincipalPage } from './principal.page';
+import { AccreditationPage } from './accreditation.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PrincipalPageRoutingModule
+    AccreditationPageRoutingModule
   ],
-  declarations: [PrincipalPage]
+  declarations: [AccreditationPage]
 })
-export class PrincipalPageModule {}
+export class AccreditationPageModule {}

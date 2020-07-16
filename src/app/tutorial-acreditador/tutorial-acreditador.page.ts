@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MenuController} from '@ionic/angular'
 
 @Component({
   selector: 'app-tutorial-acreditador',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutorialAcreditadorPage implements OnInit {
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController) { 
+    this.menuCtrl.enable(true,'menuContent');
+  }
 
   ngOnInit() {
   }

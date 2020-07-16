@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="inicio"> </ion-back-button>
     </ion-buttons>
-    <ion-title>Log In</ion-title>
+    <ion-title>Inicio de sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,14 +17,14 @@
     <ion-row></ion-row>
 
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">Contraseña</ion-label>
       <ion-input formControlName="password" type="password" required></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col>
-        <ion-button [disabled]="!loginForm.valid" (click)="onSubmitLogin(loginForm.value)" color="danger" expand="block">Sign In</ion-button>
-        <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
+        <ion-button [disabled]="!loginForm.valid" (click)="onSubmitLogin(loginForm.value)" color="danger" expand="block">Iniciar sesión</ion-button>
+        <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidó su contraseña?</a>
       </ion-col>
     </ion-row>
 
