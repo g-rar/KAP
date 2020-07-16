@@ -21,14 +21,16 @@ export class AccreditationPage implements OnInit {
   contenidos:any;
  descripcion: any;
   areas:any;
+  virtus: string;
+  ignos:string;
+  virtus_ar: any;
+  ignos_ar:any;
   
 
   constructor(private activatedRoute: ActivatedRoute, private  acreditacionService:AcreditacionService) { }
   ngOnInit() {
-    if (document.body.offsetWidth < 360) { // 768px portrait
-      this.mobile = true;
-    }
-      this.acreditacionService.getAreas().subscribe(resp=>this.areas=resp);
+   
+    this.acreditacionService.getAreas().subscribe(resp=>this.areas=resp);
     this.conocimiento = this.activatedRoute.snapshot.paramMap.get('id').split('¬') ;
     let tamanno=this.conocimiento.length;
     this.titulo = this.conocimiento[tamanno-1];
@@ -46,6 +48,10 @@ export class AccreditationPage implements OnInit {
           if(acreditacion.nombre===this.titulo){
             this.descripcion=acreditacion.descripcion;
             this.contenidos=acreditacion.contenidos;
+            this.virtus=acreditacion.virtus;
+            this.ignos=acreditacion.ignos;
+            this.ignos_ar=[].constructor(Number(this.ignos));
+            this.virtus_ar=[].constructor(Number(this.virtus));
             break;
           }
         }
@@ -55,6 +61,10 @@ export class AccreditationPage implements OnInit {
               if(acreditacion.nombre===this.titulo){
                 this.descripcion=acreditacion.descripcion;
                 this.contenidos=acreditacion.contenidos;
+                this.virtus=acreditacion.virtus;
+                this.ignos=acreditacion.ignos;
+                this.ignos_ar=[].constructor(Number(this.ignos));
+                this.virtus_ar=[].constructor(Number(this.virtus));
                 break;
               }
             }for(let esp of rama.especializaciones){
@@ -63,6 +73,10 @@ export class AccreditationPage implements OnInit {
                   if(acreditacion.nombre===this.titulo){
                     this.descripcion=acreditacion.descripcion;
                     this.contenidos=acreditacion.contenidos;
+                    this.virtus=acreditacion.virtus;
+                    this.ignos=acreditacion.ignos;
+                    this.ignos_ar=[].constructor(Number(this.ignos));
+                    this.virtus_ar=[].constructor(Number(this.virtus));
                     break;
                   }
               }
@@ -71,7 +85,7 @@ export class AccreditationPage implements OnInit {
           }
         }
       }
-    };},300);
+    };},400);
   }
  
 

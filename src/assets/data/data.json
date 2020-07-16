@@ -48,6 +48,8 @@
                     "nombre":"Java Programming: Solving Problems with Software"}, 
                     {"nombre":"Java Programming: Arrays, Lists, and Structured Data"}, 
                     {"nombre":"Object Oriented Programming in Java"}, {"nombre":"Data Structures and Performance"}],
+                "virtus":"5","ignos":"4",
+                "medio":"Curso de validación",
                 "descripcion": "Esta especialización está destinada a futuros desarrolladores de software con cierta experiencia en programación en al menos otro lenguaje de programación (por ejemplo, Python, C, JavaScript, etc.) que deseen poder resolver problemas más complejos utilizando a un diseño orientado a objetos con Java. Además de aprender Java, obtendrá experiencia con dos entornos de desarrollo Java (BlueJ y Eclipse), aprenderá a programar con interfaces gráficas de usuario y aprenderá a diseñar programas capaces de manejar grandes cantidades de datos. Estas habilidades de ingeniería de software son ampliamente aplicables en una amplia gama de industrias."
             },{
                 "nombre":"C++ Basics"
