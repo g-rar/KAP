@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
     { 
     title : 'Acreditaciones',
     url   : '/accreditations',
+
     icon  : 'book-outline' 
     },
     { 
@@ -80,11 +81,6 @@ export class AppComponent implements OnInit {
       }
 
     }
-
-    
-
-
-  
 
   initializeApp() {
     this.platform.ready().then(() => {
