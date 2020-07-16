@@ -90,25 +90,10 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.blockchain.initContracts().then(() => console.log("Contracts ready"));
     });
   }
 
   ngOnInit() {
-    this.testFelipe();
   }
-
-  async testFelipe() {
-    await this.blockchain.initContracts();
-    await this.blockchain.agregarUsuario({
-      apellidos: "Lopez",
-      cedula: "111111",
-      contrasenna: "Berune",
-      correoElectronico: "baz@gmail.com",
-      nombre: "Gerado",
-      numeroTelefonico: "77774444",
-      redesSociales: ["Facebook: felipepace09", "Instragram: felipepace09"],
-    });
-    console.log(await this.blockchain.getUsuarios());
-  }
-
 }

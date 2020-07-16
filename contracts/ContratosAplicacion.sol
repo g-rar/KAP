@@ -33,9 +33,14 @@ contract ServiciosUsuario {
         usuarios.push(usuario_);
     }
 
-    function agregarUsuario(Usuario memory _usuario) public {
-        usuariosMap[_usuario.cedula] = usuarios.length;
-        usuarios.push(_usuario);
+    function agregarUsuario(Usuario memory _usuario) public returns (string memory){
+        if(usuariosMap[_usuario.cedula] == 0){
+            usuariosMap[_usuario.cedula] = usuarios.length;
+            usuarios.push(_usuario);
+            return "S";
+        } else {
+            return "F";
+        }
     }
 
     function getUsuario(uint256 cedula)

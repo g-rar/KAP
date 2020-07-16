@@ -4,6 +4,7 @@ import {Acreditador} from '../../models/acreditador'
 import {Aspirante} from '../../models/aspirante'
 import { rejects } from 'assert';
 import {User} from '../models/User';
+import { BlockchainService } from './blockchain/blockchain.service';
 
 
 
@@ -12,7 +13,12 @@ import {User} from '../models/User';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private blockChain: BlockchainService) { 
+    if(!blockChain.terminado){
+      blockChain.initContracts();
+    }
+  }
+
   private users :  User[]= [
     {
       first_name : "hola",
@@ -52,7 +58,5 @@ export class AuthService {
       }
     )
   }
-
-  
 }
 

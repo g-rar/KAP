@@ -23,25 +23,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"getTestName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/felip/Documents/Kraken/KAPlatform/contracts/TestContract.sol\":\"TestContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/felip/Documents/Kraken/KAPlatform/contracts/TestContract.sol\":{\"keccak256\":\"0xbe36f0e2eb7b094c87c991fa8ebab116512e809a6083c6f4ff02ed2a9b7eabae\",\"urls\":[\"bzz-raw://27884ad51244df3f75d649d8ab07f146321376950c9b20adb3acc1bfebd64846\",\"dweb:/ipfs/Qmddc9bM4L4t45jM3B4quESRLPMAK5Ni9tyB6613HtCCvv\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405180606001604052806040518060400160405280600881526020017f746573744e616d650000000000000000000000000000000000000000000000008152508152602001601581526020016001815250600160006001815260200190815260200160002060008201518160000190805190602001906100939291906100b8565b506020820151816001015560408201518160020155905050600160008190555061015d565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100f957805160ff1916838001178555610127565b82800160010185558215610127579182015b8281111561012657825182559160200191906001019061010b565b5b5090506101349190610138565b5090565b61015a91905b8082111561015657600081600090555060010161013e565b5090565b90565b61019f8061016c6000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806358bee3db14610030575b600080fd5b6100386100b3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561007857808201518184015260208101905061005d565b50505050905090810190601f1680156100a55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060016000600181526020019081526020016000206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101605780601f1061013557610100808354040283529160200191610160565b820191906000526020600020905b81548152906001019060200180831161014357829003601f168201915b505050505090509056fea265627a7a72315820cc3d544743af322201bffe9e832ea3e4c6f3a5cadad3b1ab7aa6d5a3182fd29064736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c806358bee3db14610030575b600080fd5b6100386100b3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561007857808201518184015260208101905061005d565b50505050905090810190601f1680156100a55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060016000600181526020019081526020016000206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101605780601f1061013557610100808354040283529160200191610160565b820191906000526020600020905b81548152906001019060200180831161014357829003601f168201915b505050505090509056fea265627a7a72315820cc3d544743af322201bffe9e832ea3e4c6f3a5cadad3b1ab7aa6d5a3182fd29064736f6c63430005100032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"getTestName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/lopez/Documents/GitHub/KAPlatform/contracts/TestContract.sol\":\"TestContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/lopez/Documents/GitHub/KAPlatform/contracts/TestContract.sol\":{\"keccak256\":\"0xbe36f0e2eb7b094c87c991fa8ebab116512e809a6083c6f4ff02ed2a9b7eabae\",\"urls\":[\"bzz-raw://27884ad51244df3f75d649d8ab07f146321376950c9b20adb3acc1bfebd64846\",\"dweb:/ipfs/Qmddc9bM4L4t45jM3B4quESRLPMAK5Ni9tyB6613HtCCvv\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405180606001604052806040518060400160405280600881526020017f746573744e616d650000000000000000000000000000000000000000000000008152508152602001601581526020016001815250600160006001815260200190815260200160002060008201518160000190805190602001906100939291906100b8565b506020820151816001015560408201518160020155905050600160008190555061015d565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100f957805160ff1916838001178555610127565b82800160010185558215610127579182015b8281111561012657825182559160200191906001019061010b565b5b5090506101349190610138565b5090565b61015a91905b8082111561015657600081600090555060010161013e565b5090565b90565b61019f8061016c6000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806358bee3db14610030575b600080fd5b6100386100b3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561007857808201518184015260208101905061005d565b50505050905090810190601f1680156100a55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060016000600181526020019081526020016000206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101605780601f1061013557610100808354040283529160200191610160565b820191906000526020600020905b81548152906001019060200180831161014357829003601f168201915b505050505090509056fea265627a7a7231582023bb4f4e586dab59d76711e88a30efe0c63815027dce0107b2812d96f0d59a1b64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c806358bee3db14610030575b600080fd5b6100386100b3565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561007857808201518184015260208101905061005d565b50505050905090810190601f1680156100a55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060016000600181526020019081526020016000206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101605780601f1061013557610100808354040283529160200191610160565b820191906000526020600020905b81548152906001019060200180831161014357829003601f168201915b505050505090509056fea265627a7a7231582023bb4f4e586dab59d76711e88a30efe0c63815027dce0107b2812d96f0d59a1b64736f6c63430005100032",
   "sourceMap": "69:422:2:-;;;256:122;8:9:-1;5:2;;;30:1;27;20:12;5:2;256:122:2;303:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;336:2;303:44;;;;344:1;303:44;;;289:8;:11;298:1;289:11;;;;;;;;;;;:58;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;369:1;358:8;:12;;;;69:422;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "69:422:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:422:2;;;;;;;;;;;;;;;;;;;386:100;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;386:100:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;429:13;462:8;:11;471:1;462:11;;;;;;;;;;;:16;;455:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;386:100;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.21 <0.7.0;\r\n\r\ncontract TestContract {\r\n\r\n    struct TestUser {\r\n        string name;\r\n        uint age;\r\n        uint id;\r\n    }\r\n\r\n    uint lastUser;\r\n\r\n    mapping(uint => TestUser) usuarios;\r\n\r\n    constructor () public {\r\n        usuarios[1] = TestUser({name: \"testName\", age: 21, id: 1});\r\n        lastUser = 1;\r\n    }\r\n\r\n    function getTestName() public view returns(string memory) {\r\n        return usuarios[1].name;\r\n    }\r\n\r\n}",
-  "sourcePath": "C:\\Users\\felip\\Documents\\Kraken\\KAPlatform\\contracts\\TestContract.sol",
+  "sourcePath": "C:\\Users\\lopez\\Documents\\GitHub\\KAPlatform\\contracts\\TestContract.sol",
   "ast": {
-    "absolutePath": "/C/Users/felip/Documents/Kraken/KAPlatform/contracts/TestContract.sol",
+    "absolutePath": "/C/Users/lopez/Documents/GitHub/KAPlatform/contracts/TestContract.sol",
     "exportedSymbols": {
       "TestContract": [
-        600
+        608
       ]
     },
-    "id": 601,
+    "id": 609,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 557,
+        "id": 565,
         "literals": [
           "solidity",
           ">=",
@@ -60,23 +60,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 600,
+        "id": 608,
         "linearizedBaseContracts": [
-          600
+          608
         ],
         "name": "TestContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "TestContract.TestUser",
-            "id": 564,
+            "id": 572,
             "members": [
               {
                 "constant": false,
-                "id": 559,
+                "id": 567,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 564,
+                "scope": 572,
                 "src": "127:11:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -85,7 +85,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 558,
+                  "id": 566,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "127:6:2",
@@ -99,10 +99,10 @@
               },
               {
                 "constant": false,
-                "id": 561,
+                "id": 569,
                 "name": "age",
                 "nodeType": "VariableDeclaration",
-                "scope": 564,
+                "scope": 572,
                 "src": "149:8:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -111,7 +111,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 560,
+                  "id": 568,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "149:4:2",
@@ -125,10 +125,10 @@
               },
               {
                 "constant": false,
-                "id": 563,
+                "id": 571,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 564,
+                "scope": 572,
                 "src": "168:7:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -137,7 +137,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 562,
+                  "id": 570,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "168:4:2",
@@ -152,16 +152,16 @@
             ],
             "name": "TestUser",
             "nodeType": "StructDefinition",
-            "scope": 600,
+            "scope": 608,
             "src": "100:83:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 566,
+            "id": 574,
             "name": "lastUser",
             "nodeType": "VariableDeclaration",
-            "scope": 600,
+            "scope": 608,
             "src": "191:13:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -170,7 +170,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 565,
+              "id": 573,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "191:4:2",
@@ -184,21 +184,21 @@
           },
           {
             "constant": false,
-            "id": 570,
+            "id": 578,
             "name": "usuarios",
             "nodeType": "VariableDeclaration",
-            "scope": 600,
+            "scope": 608,
             "src": "213:34:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
               "typeString": "mapping(uint256 => struct TestContract.TestUser)"
             },
             "typeName": {
-              "id": 569,
+              "id": 577,
               "keyType": {
-                "id": 567,
+                "id": 575,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "221:4:2",
@@ -210,18 +210,18 @@
               "nodeType": "Mapping",
               "src": "213:25:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
                 "typeString": "mapping(uint256 => struct TestContract.TestUser)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 568,
+                "id": 576,
                 "name": "TestUser",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 564,
+                "referencedDeclaration": 572,
                 "src": "229:8:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_TestUser_$564_storage_ptr",
+                  "typeIdentifier": "t_struct$_TestUser_$572_storage_ptr",
                   "typeString": "struct TestContract.TestUser"
                 }
               }
@@ -231,14 +231,14 @@
           },
           {
             "body": {
-              "id": 587,
+              "id": 595,
               "nodeType": "Block",
               "src": "278:100:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 581,
+                    "id": 589,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -247,22 +247,22 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 573,
+                        "id": 581,
                         "name": "usuarios",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 578,
                         "src": "289:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
                           "typeString": "mapping(uint256 => struct TestContract.TestUser storage ref)"
                         }
                       },
-                      "id": 575,
+                      "id": 583,
                       "indexExpression": {
                         "argumentTypes": null,
                         "hexValue": "31",
-                        "id": 574,
+                        "id": 582,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -284,7 +284,7 @@
                       "nodeType": "IndexAccess",
                       "src": "289:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_TestUser_$564_storage",
+                        "typeIdentifier": "t_struct$_TestUser_$572_storage",
                         "typeString": "struct TestContract.TestUser storage ref"
                       }
                     },
@@ -296,7 +296,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "746573744e616d65",
-                          "id": 577,
+                          "id": 585,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -314,7 +314,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "3231",
-                          "id": 578,
+                          "id": 586,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -332,7 +332,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "31",
-                          "id": 579,
+                          "id": 587,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -363,18 +363,18 @@
                             "typeString": "int_const 1"
                           }
                         ],
-                        "id": 576,
+                        "id": 584,
                         "name": "TestUser",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 564,
+                        "referencedDeclaration": 572,
                         "src": "303:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_TestUser_$564_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_TestUser_$572_storage_ptr_$",
                           "typeString": "type(struct TestContract.TestUser storage pointer)"
                         }
                       },
-                      "id": 580,
+                      "id": 588,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -388,35 +388,35 @@
                       "nodeType": "FunctionCall",
                       "src": "303:44:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_TestUser_$564_memory",
+                        "typeIdentifier": "t_struct$_TestUser_$572_memory",
                         "typeString": "struct TestContract.TestUser memory"
                       }
                     },
                     "src": "289:58:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_TestUser_$564_storage",
+                      "typeIdentifier": "t_struct$_TestUser_$572_storage",
                       "typeString": "struct TestContract.TestUser storage ref"
                     }
                   },
-                  "id": 582,
+                  "id": 590,
                   "nodeType": "ExpressionStatement",
                   "src": "289:58:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 585,
+                    "id": 593,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 583,
+                      "id": 591,
                       "name": "lastUser",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 566,
+                      "referencedDeclaration": 574,
                       "src": "358:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -428,7 +428,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 584,
+                      "id": 592,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -449,32 +449,32 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 586,
+                  "id": 594,
                   "nodeType": "ExpressionStatement",
                   "src": "358:12:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 588,
+            "id": 596,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 571,
+              "id": 579,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "268:2:2"
             },
             "returnParameters": {
-              "id": 572,
+              "id": 580,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "278:0:2"
             },
-            "scope": 600,
+            "scope": 608,
             "src": "256:122:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -482,7 +482,7 @@
           },
           {
             "body": {
-              "id": 598,
+              "id": 606,
               "nodeType": "Block",
               "src": "444:42:2",
               "statements": [
@@ -493,22 +493,22 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 593,
+                        "id": 601,
                         "name": "usuarios",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 578,
                         "src": "462:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
                           "typeString": "mapping(uint256 => struct TestContract.TestUser storage ref)"
                         }
                       },
-                      "id": 595,
+                      "id": 603,
                       "indexExpression": {
                         "argumentTypes": null,
                         "hexValue": "31",
-                        "id": 594,
+                        "id": 602,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -530,54 +530,54 @@
                       "nodeType": "IndexAccess",
                       "src": "462:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_TestUser_$564_storage",
+                        "typeIdentifier": "t_struct$_TestUser_$572_storage",
                         "typeString": "struct TestContract.TestUser storage ref"
                       }
                     },
-                    "id": 596,
+                    "id": 604,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "name",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 559,
+                    "referencedDeclaration": 567,
                     "src": "462:16:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 592,
-                  "id": 597,
+                  "functionReturnParameters": 600,
+                  "id": 605,
                   "nodeType": "Return",
                   "src": "455:23:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 599,
+            "id": 607,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTestName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 589,
+              "id": 597,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "406:2:2"
             },
             "returnParameters": {
-              "id": 592,
+              "id": 600,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 591,
+                  "id": 599,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 599,
+                  "scope": 607,
                   "src": "429:13:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -586,7 +586,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 590,
+                    "id": 598,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "429:6:2",
@@ -601,31 +601,31 @@
               ],
               "src": "428:15:2"
             },
-            "scope": 600,
+            "scope": 608,
             "src": "386:100:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 601,
+        "scope": 609,
         "src": "69:422:2"
       }
     ],
     "src": "33:458:2"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/felip/Documents/Kraken/KAPlatform/contracts/TestContract.sol",
+    "absolutePath": "/C/Users/lopez/Documents/GitHub/KAPlatform/contracts/TestContract.sol",
     "exportedSymbols": {
       "TestContract": [
-        600
+        608
       ]
     },
-    "id": 601,
+    "id": 609,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 557,
+        "id": 565,
         "literals": [
           "solidity",
           ">=",
@@ -644,23 +644,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 600,
+        "id": 608,
         "linearizedBaseContracts": [
-          600
+          608
         ],
         "name": "TestContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "TestContract.TestUser",
-            "id": 564,
+            "id": 572,
             "members": [
               {
                 "constant": false,
-                "id": 559,
+                "id": 567,
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 564,
+                "scope": 572,
                 "src": "127:11:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -669,7 +669,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 558,
+                  "id": 566,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "127:6:2",
@@ -683,10 +683,10 @@
               },
               {
                 "constant": false,
-                "id": 561,
+                "id": 569,
                 "name": "age",
                 "nodeType": "VariableDeclaration",
-                "scope": 564,
+                "scope": 572,
                 "src": "149:8:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -695,7 +695,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 560,
+                  "id": 568,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "149:4:2",
@@ -709,10 +709,10 @@
               },
               {
                 "constant": false,
-                "id": 563,
+                "id": 571,
                 "name": "id",
                 "nodeType": "VariableDeclaration",
-                "scope": 564,
+                "scope": 572,
                 "src": "168:7:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -721,7 +721,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 562,
+                  "id": 570,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "168:4:2",
@@ -736,16 +736,16 @@
             ],
             "name": "TestUser",
             "nodeType": "StructDefinition",
-            "scope": 600,
+            "scope": 608,
             "src": "100:83:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 566,
+            "id": 574,
             "name": "lastUser",
             "nodeType": "VariableDeclaration",
-            "scope": 600,
+            "scope": 608,
             "src": "191:13:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -754,7 +754,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 565,
+              "id": 573,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "191:4:2",
@@ -768,21 +768,21 @@
           },
           {
             "constant": false,
-            "id": 570,
+            "id": 578,
             "name": "usuarios",
             "nodeType": "VariableDeclaration",
-            "scope": 600,
+            "scope": 608,
             "src": "213:34:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
               "typeString": "mapping(uint256 => struct TestContract.TestUser)"
             },
             "typeName": {
-              "id": 569,
+              "id": 577,
               "keyType": {
-                "id": 567,
+                "id": 575,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "221:4:2",
@@ -794,18 +794,18 @@
               "nodeType": "Mapping",
               "src": "213:25:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
                 "typeString": "mapping(uint256 => struct TestContract.TestUser)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 568,
+                "id": 576,
                 "name": "TestUser",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 564,
+                "referencedDeclaration": 572,
                 "src": "229:8:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_TestUser_$564_storage_ptr",
+                  "typeIdentifier": "t_struct$_TestUser_$572_storage_ptr",
                   "typeString": "struct TestContract.TestUser"
                 }
               }
@@ -815,14 +815,14 @@
           },
           {
             "body": {
-              "id": 587,
+              "id": 595,
               "nodeType": "Block",
               "src": "278:100:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 581,
+                    "id": 589,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -831,22 +831,22 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 573,
+                        "id": 581,
                         "name": "usuarios",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 578,
                         "src": "289:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
                           "typeString": "mapping(uint256 => struct TestContract.TestUser storage ref)"
                         }
                       },
-                      "id": 575,
+                      "id": 583,
                       "indexExpression": {
                         "argumentTypes": null,
                         "hexValue": "31",
-                        "id": 574,
+                        "id": 582,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -868,7 +868,7 @@
                       "nodeType": "IndexAccess",
                       "src": "289:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_TestUser_$564_storage",
+                        "typeIdentifier": "t_struct$_TestUser_$572_storage",
                         "typeString": "struct TestContract.TestUser storage ref"
                       }
                     },
@@ -880,7 +880,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "746573744e616d65",
-                          "id": 577,
+                          "id": 585,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -898,7 +898,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "3231",
-                          "id": 578,
+                          "id": 586,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -916,7 +916,7 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "31",
-                          "id": 579,
+                          "id": 587,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -947,18 +947,18 @@
                             "typeString": "int_const 1"
                           }
                         ],
-                        "id": 576,
+                        "id": 584,
                         "name": "TestUser",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 564,
+                        "referencedDeclaration": 572,
                         "src": "303:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_struct$_TestUser_$564_storage_ptr_$",
+                          "typeIdentifier": "t_type$_t_struct$_TestUser_$572_storage_ptr_$",
                           "typeString": "type(struct TestContract.TestUser storage pointer)"
                         }
                       },
-                      "id": 580,
+                      "id": 588,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -972,35 +972,35 @@
                       "nodeType": "FunctionCall",
                       "src": "303:44:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_TestUser_$564_memory",
+                        "typeIdentifier": "t_struct$_TestUser_$572_memory",
                         "typeString": "struct TestContract.TestUser memory"
                       }
                     },
                     "src": "289:58:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_TestUser_$564_storage",
+                      "typeIdentifier": "t_struct$_TestUser_$572_storage",
                       "typeString": "struct TestContract.TestUser storage ref"
                     }
                   },
-                  "id": 582,
+                  "id": 590,
                   "nodeType": "ExpressionStatement",
                   "src": "289:58:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 585,
+                    "id": 593,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 583,
+                      "id": 591,
                       "name": "lastUser",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 566,
+                      "referencedDeclaration": 574,
                       "src": "358:8:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1012,7 +1012,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "31",
-                      "id": 584,
+                      "id": 592,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1033,32 +1033,32 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 586,
+                  "id": 594,
                   "nodeType": "ExpressionStatement",
                   "src": "358:12:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 588,
+            "id": 596,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 571,
+              "id": 579,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "268:2:2"
             },
             "returnParameters": {
-              "id": 572,
+              "id": 580,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "278:0:2"
             },
-            "scope": 600,
+            "scope": 608,
             "src": "256:122:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1066,7 +1066,7 @@
           },
           {
             "body": {
-              "id": 598,
+              "id": 606,
               "nodeType": "Block",
               "src": "444:42:2",
               "statements": [
@@ -1077,22 +1077,22 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 593,
+                        "id": 601,
                         "name": "usuarios",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 570,
+                        "referencedDeclaration": 578,
                         "src": "462:8:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$564_storage_$",
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_TestUser_$572_storage_$",
                           "typeString": "mapping(uint256 => struct TestContract.TestUser storage ref)"
                         }
                       },
-                      "id": 595,
+                      "id": 603,
                       "indexExpression": {
                         "argumentTypes": null,
                         "hexValue": "31",
-                        "id": 594,
+                        "id": 602,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1114,54 +1114,54 @@
                       "nodeType": "IndexAccess",
                       "src": "462:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_TestUser_$564_storage",
+                        "typeIdentifier": "t_struct$_TestUser_$572_storage",
                         "typeString": "struct TestContract.TestUser storage ref"
                       }
                     },
-                    "id": 596,
+                    "id": 604,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "name",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 559,
+                    "referencedDeclaration": 567,
                     "src": "462:16:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 592,
-                  "id": 597,
+                  "functionReturnParameters": 600,
+                  "id": 605,
                   "nodeType": "Return",
                   "src": "455:23:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 599,
+            "id": 607,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getTestName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 589,
+              "id": 597,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "406:2:2"
             },
             "returnParameters": {
-              "id": 592,
+              "id": 600,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 591,
+                  "id": 599,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 599,
+                  "scope": 607,
                   "src": "429:13:2",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1170,7 +1170,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 590,
+                    "id": 598,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "429:6:2",
@@ -1185,14 +1185,14 @@
               ],
               "src": "428:15:2"
             },
-            "scope": 600,
+            "scope": 608,
             "src": "386:100:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 601,
+        "scope": 609,
         "src": "69:422:2"
       }
     ],
@@ -1206,12 +1206,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x3DeFd7bab7E4DE52834621838D49630A62e5a147",
-      "transactionHash": "0xfab13cf730fee192b3d37877998dd45ce2abadefd047edbb7f2e6e5bd1d7437d"
+      "address": "0xd0c6eF972499309160b1eA1168E9698391fE19B4",
+      "transactionHash": "0x3cadf9451625be4a0a03a453331259a329dad044ad7cd588e87befe43fa50cba"
     }
   },
   "schemaVersion": "3.2.0",
-  "updatedAt": "2020-07-15T03:33:29.702Z",
+  "updatedAt": "2020-07-16T02:17:20.329Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

@@ -22,13 +22,13 @@ export class BlockchainService {
 
     let acreditacionAbstraction = await this.w3.artifactsToContract(acreditacionArtifacts);
     this.contratoAcreditacion = await acreditacionAbstraction.deployed();
-
+    this.terminado = true;
   }
 
   /* Usuario */
 
   async agregarUsuario(usuario) {
-    await this.contratoUsuario.agregarUsuario.sendTransaction(usuario, {from: "0xa8e12c6216BcBA4C27E777144fDc8ff0F2bcE4Ec"});
+    await this.contratoUsuario.agregarUsuario.sendTransaction(usuario, {from: "0x156F98047b61385febEe2b5Cb67f2d975809D8b6"});
   }
 
   async getUsuarios() {
