@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {MenuController} from '@ionic/angular'
 
 
 @Component({
@@ -9,7 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UsermenuPage implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private menuCtrl: MenuController) {
+    this.menuCtrl.enable(true,'menuContent');
+   }
 
   ngOnInit() {
   }

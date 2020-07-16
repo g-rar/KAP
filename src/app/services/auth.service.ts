@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginPage } from '../login/login.page';
 import { rejects } from 'assert';
-import {User} from '../../models/User';
-
-
+import {User} from '../../models/user';
 
 @Injectable({
   providedIn: 'root'

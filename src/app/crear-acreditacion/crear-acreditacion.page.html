@@ -13,22 +13,21 @@
   <ion-list>
   <ion-item class = "bef">
     <ion-label position = "floating" >Titulo:</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
- 
- 
+    <ion-input [(ngModel)]="acreditacion.titulo"></ion-input>
+
+  </ion-item> 
     <ion-item>
       <ion-label position = "floating" >Descripcion:</ion-label>
-      <ion-textarea rows = "5"></ion-textarea>
+      <ion-textarea [(ngModel)]="acreditacion.descripcion" rows = "5"></ion-textarea>
     </ion-item>
     <ion-item>
       <ion-label position = "floating" >Medio de Evaluación:</ion-label>
-      <ion-textarea rows = "5" ></ion-textarea>
+      <ion-input [(ngModel)]="acreditacion.tipoMedio" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position = "floating" >Agregar contenido:</ion-label>
   
-      <ion-input placeholder="" [(ngModel)]="content" ></ion-input>
+      <ion-input [(ngModel)]="content" ></ion-input>
        <ion-buttons slot = "end">
           <ion-button shape="round" icon-only (click)= "addContent()">
           <ion-icon shape="circle" name="add-outline"></ion-icon>
@@ -40,7 +39,7 @@
         <ion-label>Contenidos:</ion-label>
       </ion-card-header>
       <ion-card-content>
-        <ion-item class ="contenido" *ngFor="let content of contents; index as i">
+        <ion-item class ="contenido" *ngFor="let content of acreditacion.contenidos; index as i">
             {{i+1}}. {{content}}
             <ion-buttons slot = "end">
               <ion-button shape="round" icon-only (click)= "removeContent(i)">
@@ -76,10 +75,10 @@
         </ion-item>
       </ion-select>
       </ion-item>
-    <ion-item >
+    <ion-item class="custom">
       <ion-col align-self-center>
-      <ion-button shape="round" expand="block" color="primary">
-        <ion-label>Enviar</ion-label>
+      <ion-button (click)="registrarAcreditacion()" shape="round" expand="block" color="primary">
+        <ion-label>Registrar Acreditación</ion-label>
       </ion-button>
       </ion-col>
     </ion-item>

@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
       this.cambiarUsr.title='Cambiar a Acreditador';
       this.menuName='Aspirante';
       this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
-      this.navCtrl.navigateRoot(['/tutorial-aspirante']);
+      this.navCtrl.navigateRoot(['/usermenu']);
       this.acreditador = false;
       }
      
@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
           this.cambiarUsr.title='Cambiar a Aspirante';
           this.menuName='Acreditador'
           this.menu.find(element => element.title == "Tutorial").url="/tutorial-acreditador"
-          this.navCtrl.navigateRoot(['/tutorial-acreditador']);
+          this.navCtrl.navigateRoot(['/usermenu']);
           this.acreditador=true
       }
 
