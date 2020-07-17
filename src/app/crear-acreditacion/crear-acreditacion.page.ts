@@ -4,10 +4,10 @@ import { stringify } from 'querystring';
 import {Acreditacion} from '../../models/acreditation'
 import {AuthService} from '../services/auth.service'
 import {AlertService} from '../services/alert.service'
+
 import {AcreditationRegisterService } from '../services/acreditation-register.service';
 
 import { NavController } from '@ionic/angular';
-
 
 @Component({
   selector: 'app-crear-acreditacion',
@@ -44,10 +44,10 @@ export class CrearAcreditacionPage implements OnInit {
               private authService : AuthService,
               private acreditacionService:AcreditacionService,
               public navCtrl: NavController) { 
-    this.acreditacionService.getAreas().subscribe(resp=>{
-      this.areas=resp;
-      this.setAreasNames();
-    })
+    //this.acreditacionService.getAreas().subscribe(resp=>{
+    //  this.areas=resp;
+    //  this.setAreasNames();
+    //})
   }
   
   addContent(){

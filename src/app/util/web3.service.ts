@@ -36,7 +36,6 @@ export class Web3Service {
       this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
     }
 
-    setInterval(() => this.refreshAccounts(), 100);
   }
 
   public async artifactsToContract(artifacts) {

@@ -1,69 +1,78 @@
 [
     {
         "nombre": "Ciencias de la Computación",
-        "ramas":[
-        {
-            "nombre":"Desarrollo de Software",
-            "especializaciones":[
+        "ramas": [
             {
-                "nombre":"Applied Data Science",
-                "acreditaciones":[
+                "nombre": "Desarrollo de Software",
+                "especializaciones": [
                     {
-                        "nombre":"Object Oriented Programming in Java",
-                        "descripcion": "Esta especialización está destinada a futuros desarrolladores de software con cierta experiencia en programación en al menos otro lenguaje de programación (por ejemplo, Python, C, JavaScript, etc.) que deseen poder resolver problemas más complejos utilizando a un diseño orientado a objetos con Java. Además de aprender Java, obtendrá experiencia con dos entornos de desarrollo Java (BlueJ y Eclipse), aprenderá a programar con interfaces gráficas de usuario y aprenderá a diseñar programas capaces de manejar grandes cantidades de datos. Estas habilidades de ingeniería de software son ampliamente aplicables en una amplia gama de industrias."
+                        "nombre": "Applied Data Science",
+                        "acreditaciones": [
+                            {
+                                "nombre": "Object Oriented Programming in Java",
+                                "descripcion": "Esta especialización está destinada a futuros desarrolladores de software con cierta experiencia en programación en al menos otro lenguaje de programación (por ejemplo, Python, C, JavaScript, etc.) que deseen poder resolver problemas más complejos utilizando a un diseño orientado a objetos con Java. Además de aprender Java, obtendrá experiencia con dos entornos de desarrollo Java (BlueJ y Eclipse), aprenderá a programar con interfaces gráficas de usuario y aprenderá a diseñar programas capaces de manejar grandes cantidades de datos. Estas habilidades de ingeniería de software son ampliamente aplicables en una amplia gama de industrias."
+                            },
+                            {
+                                "nombre": "Data Analysis with Python"
+                            }
+                        ]
                     },
                     {
-                        "nombre":"Data Analysis with Python"
+                        "nombre": "Google Cloud Platform",
+                        "acreditaciones": [
+                            {
+                                "nombre": "Google Cloud Basics"
+                            },
+                            {
+                                "nombre": "Google Cloud II"
+                            }
+                        ]
+                    }
+                ],
+                "acreditaciones": [
+                    {
+                        "nombre": "Deep Learning"
+                    },
+                    {
+                        "nombre": "Nueral Networks"
                     }
                 ]
             },
             {
-               "nombre":"Google Cloud Platform",
-                "acreditaciones":[
-                    {
-                        "nombre":"Google Cloud Basics"
-                    },
-                    {
-                        "nombre":"Google Cloud II"
-                    }
-                ]
+                "nombre": "Algoritmos"
             }
-            ],
-            "acreditaciones":[
-                {
-                    "nombre":"Deep Learning"
-                },
-                {
-                    "nombre":"Nueral Networks"
-                }
-            ]  
-        },{
-          "nombre":"Algoritmos"
-        }
         ],
-        "acreditaciones":[
+        "acreditaciones": [
             {
-                "nombre":"Python Basics",
-                "contenidos":[ {
-                    "nombre":"Java Programming: Solving Problems with Software"}, 
-                    {"nombre":"Java Programming: Arrays, Lists, and Structured Data"}, 
-                    {"nombre":"Object Oriented Programming in Java"}, {"nombre":"Data Structures and Performance"}],
+                "titulo": "Python Basics",
+                "idAcreditacion": 1,
+                "idAcreditador": 305280872,
+                "contenidos": [
+                    "Java Programming: Solving Problems with Software",
+                    "Java Programming: Arrays, Lists, and Structured Data",
+                    "Object Oriented Programming in Java",
+                    "Data Structures and Performance"
+                ],
+                "tipoMedio": "Curso",
+                "ignos": 100,
+                "virtus": 100,
                 "descripcion": "Esta especialización está destinada a futuros desarrolladores de software con cierta experiencia en programación en al menos otro lenguaje de programación (por ejemplo, Python, C, JavaScript, etc.) que deseen poder resolver problemas más complejos utilizando a un diseño orientado a objetos con Java. Además de aprender Java, obtendrá experiencia con dos entornos de desarrollo Java (BlueJ y Eclipse), aprenderá a programar con interfaces gráficas de usuario y aprenderá a diseñar programas capaces de manejar grandes cantidades de datos. Estas habilidades de ingeniería de software son ampliamente aplicables en una amplia gama de industrias."
-            },{
-                "nombre":"C++ Basics"
+            },
+            {
+                "nombre": "C++ Basics"
             }
         ]
     },
     {
         "nombre": "Medicina",
-        "acreditaciones":[
+        "acreditaciones": [
             {
-                "nombre":"Python Basics"
-            },{
-                "nombre":"C++ Basics"
+                "nombre": "Python Basics"
+            },
+            {
+                "nombre": "C++ Basics"
             }
         ]
-
     },
     {
         "nombre": "Enseñanza"
@@ -74,7 +83,4 @@
     {
         "nombre": "Musica"
     }
-        
-    ]
-
-  
+]

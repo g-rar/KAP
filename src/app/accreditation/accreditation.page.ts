@@ -4,6 +4,7 @@ import { __await } from 'tslib';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { IonContent, IonLabel } from '@ionic/angular';
 import { AcreditacionService } from '../providers/acreditacion.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-accreditation',
@@ -21,58 +22,43 @@ export class AccreditationPage implements OnInit {
   contenidos:any;
  descripcion: any;
   areas:any;
+  virtus: any;
+  ignos: any;
+  idAcreditacion: any;
+  idAcreditador: any;
+  tipoMedio: any;
+  usuario: any = {};
   
 
-  constructor(private activatedRoute: ActivatedRoute, private  acreditacionService:AcreditacionService) { }
+  constructor(private activatedRoute: ActivatedRoute, private  acreditacionService:AcreditacionService, private authService: AuthService) { }
   ngOnInit() {
     if (document.body.offsetWidth < 360) { // 768px portrait
       this.mobile = true;
     }
-      this.acreditacionService.getAreas().subscribe(resp=>this.areas=resp);
-    this.conocimiento = this.activatedRoute.snapshot.paramMap.get('id').split('¬') ;
-    let tamanno=this.conocimiento.length;
-    this.titulo = this.conocimiento[tamanno-1];
-  
-    this.area = this.conocimiento [0];
-    if(tamanno===3){
-      this.rama=this.conocimiento[1];
-    }else if(tamanno===4){
-      this.rama=this.conocimiento[1];
-      this.especializacion=this.conocimiento[2];
-    }
-    setTimeout(() => {for(let area of this.areas){
-      if(area.nombre===this.area){
-        for(let acreditacion of area.acreditaciones){
-          if(acreditacion.nombre===this.titulo){
-            this.descripcion=acreditacion.descripcion;
-            this.contenidos=acreditacion.contenidos;
-            break;
-          }
-        }
-        for(let rama of area.ramas){
-          if(rama.nombre===this.rama){
-            for(let acreditacion of rama.acreditaciones){
-              if(acreditacion.nombre===this.titulo){
-                this.descripcion=acreditacion.descripcion;
-                this.contenidos=acreditacion.contenidos;
-                break;
-              }
-            }for(let esp of rama.especializaciones){
-              if(esp.nombre===this.especializacion){
-                for(let acreditacion of esp.acreditaciones){
-                  if(acreditacion.nombre===this.titulo){
-                    this.descripcion=acreditacion.descripcion;
-                    this.contenidos=acreditacion.contenidos;
-                    break;
-                  }
-              }
-            }
-          }
-          }
-        }
-      }
-    };},300);
+    this.idAcreditacion = this.activatedRoute.snapshot.paramMap.get('id');
+    
+    this.acreditacionService.getAcreditacion(Number(this.idAcreditacion)).then(res => {
+      this.titulo = res["titulo"];
+
+      let conos = res.conocimiento.split(":");
+      this.area = (conos[0].trim());
+      this.rama = (conos.length > 1) ? (conos[1].trim()): "";
+      this.especializacion = (conos.length > 2) ? (conos[2].trim()): "";
+
+      this.descripcion = res["descripcion"];
+      this.contenidos = res["contenidos"];
+      this.idAcreditacion = res["idAcreditacion"];
+      this.idAcreditador = res["idAcreditador"];
+      this.ignos = res["ignos"];
+      this.tipoMedio = res["tipoMedio"];
+      this.virtus = res["virtus"];
+      this.usuario = res["acreditador"];
+      console.log(this.authService.actualUser);
+    });
+
   }
+
+
  
 
 }

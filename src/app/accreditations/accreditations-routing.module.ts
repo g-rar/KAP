@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AccreditationsPage } from './accreditations.page';
-import { AccreditationResolverService } from '../services/accreditation-resolver.service';
 
 const routes: Routes = [
   {
@@ -11,9 +9,7 @@ const routes: Routes = [
     
   },
   {
-    path: ':id',resolve:{
-      data:AccreditationResolverService
-    },
+    path: ':id',
     loadChildren: () => import('src/app/accreditation/accreditation.module').then( m => m.AccreditationPageModule)
   }
 ];

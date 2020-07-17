@@ -1,66 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/usermenu']">KAP</ion-button>
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-title *ngIf="!ios && !showSearchbar">{{titulo}}</ion-title>
+    </ion-buttons>
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot= "start">
-        <ion-button  [routerLink]="['/usermenu']">KAP</ion-button>
-        <ion-menu-button>
-        </ion-menu-button>
-        <ion-title *ngIf="!ios && !showSearchbar">{{titulo}}</ion-title>
-      </ion-buttons>      
-      
-    </ion-toolbar>
-    
-  </ion-header>
+  </ion-toolbar>
+
+</ion-header>
 
 <ion-content #content>
-  <ion-list  class="segmento">
-  <ion-label class="area-descripcion">
-    <br>
-    <ion-label class="titulo-descripcion" color="dark"><strong><ion-icon name="information-circle-sharp"></ion-icon> Acerca de la acreditación</strong></ion-label><br><br/>
-    <ion-segment >
-    <ion-label   align="justify" class="descripcion" color="dark">{{descripcion}}
-  </ion-label>
-  
-</ion-segment >
-</ion-label >
-<ion-item>
-      <ion-button disabled="true" class="conocimiento"  color="primary"> {{area}}  </ion-button> 
-      <ion-button *ngIf="rama" disabled="true"class="conocimiento" color="secondary">  {{rama}}   </ion-button>
-      <ion-button *ngIf="especializacion" disabled="true" class="conocimiento"  color="tertiary"> {{especializacion}}</ion-button>    
-    </ion-item>
-  
-    <ion-label class="titulo-descripcion" color="dark"><strong>
-      <ion-icon name="bookmarks-sharp"></ion-icon> Contenidos</strong></ion-label><br><br/>
-    <ion-item  *ngFor="let contenido of contenidos">
-    <ion-text align="justify" class="descripcion"  color="dark"><ion-icon color="primary" name="bookmark-sharp" item-start></ion-icon>  {{contenido.nombre}}<br><br> 
-  </ion-text>
-</ion-item>
-</ion-list>
+  <ion-list class="segmento">
+    <ion-label class="area-descripcion">
+      <br>
+      <ion-label class="titulo-descripcion" color="dark"><strong>
+          <ion-icon name="information-circle-sharp"></ion-icon> Acerca de la acreditación
+        </strong></ion-label><br><br />
+      <ion-segment>
+        <ion-label align="justify" class="descripcion" color="dark">{{descripcion}}
+        </ion-label>
 
-<ion-list class="segmento2">
-  <ion-textarea align="center">
+      </ion-segment>
+    </ion-label>
+    <ion-item>
+      <ion-button disabled="true" class="conocimiento" color="primary"> {{area}} </ion-button>
+      <ion-button *ngIf="rama" disabled="true" class="conocimiento" color="secondary"> {{rama}} </ion-button>
+      <ion-button *ngIf="especializacion" disabled="true" class="conocimiento" color="tertiary"> {{especializacion}}
+      </ion-button>
+    </ion-item>
+
     <ion-label class="titulo-descripcion" color="dark"><strong>
-      Acreditador</strong></ion-label><br><br/>
-    <ion-text align="center" id="descripcion" class="descripcion" color="dark">
-      <ion-icon color="secondary" name="person-sharp" item-start></ion-icon> Felipe Pacheco Cerdas<br><br>
-  </ion-text>
-  <ion-text align="center" id="descripcion" class="descripcion" color="dark">
-    <ion-icon color="secondary" name="call-sharp" item-start></ion-icon> Número Telefónico: 60254523<br><br>
-  </ion-text>
-  <ion-text align="center" id="descripcion" class="descripcion" color="dark">
-    <ion-icon color="secondary" name="mail-sharp" item-start></ion-icon> Correo Electrónico: felipepace09@gmail.com<br><br>
-  </ion-text>
-  </ion-textarea>
-  <ion-textarea align="center">
-    <ion-label class="titulo-descripcion" color="dark"><strong>
-      Calificación</strong></ion-label><br><br/>
-    <ion-text align="center" id="descripcion" class="descripcion" color="dark">
-       Ignos: 5.0 <ion-icon *ngFor="let i of  [].constructor(5)" color="flama" name="flame-sharp" item-start></ion-icon><br><br>
-  </ion-text>
-  <ion-text align="center" id="descripcion" class="descripcion" color="dark">
-    Virtus: 5.0 <ion-icon *ngFor="let i of  [].constructor(5)" color="success" name="leaf-sharp" item-start></ion-icon><br><br>
-</ion-text>
-<ion-button color="primary"> Inscribirse </ion-button> 
-  </ion-textarea>
-</ion-list>
+        <ion-icon name="bookmarks-sharp"></ion-icon> Contenidos
+      </strong></ion-label><br><br />
+    <ion-item *ngFor="let contenido of contenidos">
+      <ion-text align="justify" class="descripcion" color="dark">
+        <ion-icon color="primary" name="bookmark-sharp" item-start></ion-icon> {{contenido}}<br><br>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="segmento2">
+    <ion-textarea align="center">
+      <ion-label class="titulo-descripcion" color="dark"><strong>
+          Acreditador</strong></ion-label><br><br />
+      <ion-text align="center" id="descripcion" class="descripcion" color="dark">
+        <ion-icon color="secondary" name="person-sharp" item-start></ion-icon> {{usuario.first_name}}
+        {{usuario.last_name}}<br><br>
+      </ion-text>
+      <ion-text align="center" id="descripcion" class="descripcion" color="dark">
+        <ion-icon color="secondary" name="call-sharp" item-start></ion-icon> Número Telefónico:
+        {{usuario.telefono}}<br><br>
+      </ion-text>
+      <ion-text align="center" id="descripcion" class="descripcion" color="dark">
+        <ion-icon color="secondary" name="mail-sharp" item-start></ion-icon> Correo Electrónico:
+        {{usuario.email}}<br><br>
+      </ion-text>
+    </ion-textarea>
+    <ion-textarea align="center">
+      <ion-label class="titulo-descripcion" color="dark"><strong>
+          Calificación</strong></ion-label><br><br />
+      <ion-text align="center" id="descripcion" class="descripcion" color="dark">
+        Ignos: {{ignos}} <ion-icon *ngFor="let i of  [].constructor(5)" color="flama" name="flame-sharp" item-start>
+        </ion-icon><br><br>
+      </ion-text>
+      <ion-text align="center" id="descripcion" class="descripcion" color="dark">
+        Virtus: {{virtus}} <ion-icon *ngFor="let i of  [].constructor(5)" color="success" name="leaf-sharp" item-start>
+        </ion-icon><br><br>
+      </ion-text>
+      <ion-button color="primary"> Inscribirse </ion-button>
+    </ion-textarea>
+  </ion-list>
 </ion-content>

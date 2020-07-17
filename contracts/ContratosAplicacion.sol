@@ -33,8 +33,11 @@ contract ServiciosUsuario {
         usuarios.push(usuario_);
     }
 
-    function agregarUsuario(Usuario memory _usuario) public returns (string memory){
-        if(usuariosMap[_usuario.cedula] == 0){
+    function agregarUsuario(Usuario memory _usuario)
+        public
+        returns (string memory)
+    {
+        if (usuariosMap[_usuario.cedula] == 0) {
             usuariosMap[_usuario.cedula] = usuarios.length;
             usuarios.push(_usuario);
             return "S";
@@ -83,22 +86,44 @@ contract ServiciosAcreditacion {
 
     constructor() public {
         Acreditacion memory acreditacion_;
-        acreditacion_.titulo = "Python Basics";
+        acreditacion_.titulo = "Java Basics";
         acreditacion_.idAcreditacion = 1;
         acreditacion_.idAcreditador = 305280872;
-        acreditacion_
-            .conocimiento = "Ciencias de la Computacion: Lenguajes de Programacion";
-        acreditacion_.tipoMedio = "Examen Práctico";
-        string[] memory ct = new string[](2);
-        ct[0] = "Funciones";
-        ct[1] = "Excepciones";
+        acreditacion_.conocimiento = "Ciencias de la Computación";
+        acreditacion_.tipoMedio = "Curso";
+        string[] memory ct = new string[](4);
+        ct[0] = "Java Programming: Solving Problems with Software";
+        ct[1] = "Java Programming: Arrays, Lists, and Structured Data";
+        ct[2] = "Object Oriented Programming in Java";
+        ct[3] = "Data Structures and Performance";
         acreditacion_.contenidos = ct;
         acreditacion_
-            .descripcion = "En este curso aprenderás sobre el arte y la ciencia del anime";
-        acreditacion_.ignos = 0;
-        acreditacion_.ignos = 0;
+            .descripcion = "Esta especialización está destinada a futuros desarrolladores de software con cierta experiencia en programación en al menos otro lenguaje de programación (por ejemplo, Python, C, JavaScript, etc.) que deseen poder resolver problemas más complejos utilizando a un diseño orientado a objetos con Java. Además de aprender Java, obtendrá experiencia con dos entornos de desarrollo Java (BlueJ y Eclipse), aprenderá a programar con interfaces gráficas de usuario y aprenderá a diseñar programas capaces de manejar grandes cantidades de datos. Estas habilidades de ingeniería de software son ampliamente aplicables en una amplia gama de industrias.";
+        acreditacion_.ignos = 5;
+        acreditacion_.ignos = 5;
+
+        Acreditacion memory acreditacion_2;
+        acreditacion_2.titulo = "Introducción a Filosofía";
+        acreditacion_2.idAcreditacion = 2;
+        acreditacion_2.idAcreditador = 305280872;
+        acreditacion_2
+            .conocimiento = "Ciencias Sociales y Humanas: Filosofía: PUTA";
+        acreditacion_2.tipoMedio = "Curso";
+        string[] memory ct2 = new string[](6);
+        ct2[0] = "¿Qué es la filosofía?";
+        ct2[1] = "Moralidad: Objetiva, relativa o emocional";
+        ct2[2] = "¿Qué es el conocimiento? ¿Tenemos alguno?";
+        ct2[3] = "¿Tenemos alguna obligación de obeceder la ley?";
+        ct2[4] = "Mentes, cerebros y computadoras";
+        ct2[5] = "¿Las teorías científicas son verdaderas?";
+        acreditacion_2.contenidos = ct2;
+        acreditacion_2
+            .descripcion = "Este curso le presentará algunas de las principales áreas de investigación en filosofía contemporánea. En cada módulo, un filósofo diferente lo guiará a través de algunas de las preguntas y cuestiones más importantes en su área de especialización. Comenzaremos tratando de entender qué es la filosofía, cuáles son sus objetivos y métodos característicos, y en qué se diferencia de otros temas. Luego, pasaremos el resto del curso obteniendo una visión general introductoria de varias áreas diferentes.";
+        acreditacion_2.ignos = 5;
+        acreditacion_2.ignos = 5;
 
         acreditaciones.push(acreditacion_);
+        acreditaciones.push(acreditacion_2);
 
         AspiranteAcreditacion memory acreditacionAspirante_;
         acreditacionAspirante_.idAcreditacion = 1;
@@ -115,18 +140,15 @@ contract ServiciosAcreditacion {
         acreditaciones.push(_acreditacion);
     }
 
-    function getAcreditacion(string memory conocimiento, string memory titulo)
+    function getAcreditacion(uint256 idAcreditacion)
         public
         view
         returns (Acreditacion memory acreditacion)
     {
         for (uint256 i = 0; i < acreditaciones.length; i++) {
-            if (
-                keccak256(bytes(acreditaciones[i].conocimiento)) ==
-                keccak256(bytes(conocimiento)) &&
-                keccak256(bytes(acreditaciones[i].titulo)) ==
-                keccak256(bytes(titulo))
-            ) return acreditaciones[i];
+            if (acreditaciones[i].idAcreditacion == idAcreditacion) {
+                return acreditaciones[i];
+            }
         }
     }
 
