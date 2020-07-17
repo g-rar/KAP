@@ -75,15 +75,15 @@ export class AppComponent implements OnInit {
       this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
       this.navCtrl.navigateRoot(['/usermenu']);
       this.authService.acreditador=false
-      }
+    }
      
-      else{
-          this.cambiarUsr.title='Cambiar a Aspirante';
-          this.menuName='Acreditador'
-          this.menu.find(element => element.title == "Tutorial").url="/tutorial-acreditador"
-          this.navCtrl.navigateRoot(['/usermenu']);
-          this.authService.acreditador=true
-      }
+    else{
+      this.cambiarUsr.title='Cambiar a Aspirante';
+      this.menuName='Acreditador'
+      this.menu.find(element => element.title == "Tutorial").url="/tutorial-acreditador"
+      this.navCtrl.navigateRoot(['/usermenu']);
+      this.authService.acreditador=true
+    }
 
     }
 

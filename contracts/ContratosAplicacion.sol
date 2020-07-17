@@ -111,8 +111,10 @@ contract ServiciosAcreditacion {
         aspirantes.push(acreditacionAspirante_);
     }
 
-    function agregarAcreditacion(Acreditacion memory _acreditacion) public {
+    function agregarAcreditacion(Acreditacion memory _acreditacion) public returns (uint){
+        _acreditacion.idAcreditacion = acreditaciones.length;
         acreditaciones.push(_acreditacion);
+        return _acreditacion.idAcreditacion;
     }
 
     function getAcreditacion(string memory conocimiento, string memory titulo)

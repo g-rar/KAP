@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Acreditacion} from '../../models/acreditation'
+import { BlockchainService } from './blockchain/blockchain.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AcreditationRegisterService {
 
-  constructor() { }
+  constructor(private blockChain : BlockchainService) { 
+    if(!blockChain.terminado){
+      blockChain.initContracts()
+    }
+  }
   private acreditaciones :  Acreditacion[]= [
     {
       titulo : "hola",
@@ -21,8 +26,11 @@ export class AcreditationRegisterService {
     }
 
   ]
-  public registrarAcreditacion(acreditacion:Acreditacion ){
+  public async registrarAcreditacion(acreditacion:Acreditacion ){
     acreditacion.idAcreditacion=this.acreditaciones.length
+    this.blockChain.agregarAcreditacion(acreditacion).then((result)=>{
+      console.log(result);
+    })
     this.acreditaciones.push(acreditacion)
     console.log(this.acreditaciones)
   }
