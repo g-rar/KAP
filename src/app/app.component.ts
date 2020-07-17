@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { NavController } from '@ionic/angular';
 import { BlockchainService } from './services/blockchain/blockchain.service';
+import { AuthService} from './services/auth.service'
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -59,18 +60,21 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public navCtrl: NavController,
-    private blockchain: BlockchainService
+    private blockchain: BlockchainService,
+    public authService:AuthService
   ) {
     this.initializeApp();
+    this.acreditador=authService.acreditador
+    
   }
 
   cambiarUsuario(){
-    if(this.acreditador){
+    if(this.authService.acreditador){
       this.cambiarUsr.title='Cambiar a Acreditador';
       this.menuName='Aspirante';
       this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
       this.navCtrl.navigateRoot(['/usermenu']);
-      this.acreditador = false;
+      this.authService.acreditador=false
       }
      
       else{
@@ -78,10 +82,15 @@ export class AppComponent implements OnInit {
           this.menuName='Acreditador'
           this.menu.find(element => element.title == "Tutorial").url="/tutorial-acreditador"
           this.navCtrl.navigateRoot(['/usermenu']);
-          this.acreditador=true
+          this.authService.acreditador=true
       }
 
     }
+
+    
+
+
+  
 
   initializeApp() {
     this.platform.ready().then(() => {
