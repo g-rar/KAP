@@ -27,7 +27,7 @@ export class ListaAspirantesPage implements OnInit {
                   console.log(asp);
                   user["estado"] = "No"
                   if (asp["estado"] == "En proceso") user["estado"] = "No"
-                  if (asp["resultado"] == "Aceptado") user["estado"] = "Si1"
+                  if (asp["resultado"] == "Aceptado" || asp["resultado"] == "Aprobado") user["estado"] = "Si1"
                   if (asp["resultado"] == "Rechazado") user["estado"] = "Si2"
                   this.aspirantes.push(user);
                 }

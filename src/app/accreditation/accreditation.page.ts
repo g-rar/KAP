@@ -68,8 +68,8 @@ export class AccreditationPage implements OnInit {
       this.acreditacionService.getAspiranteAcreditacion(this.idAcreditacion, this.authService.actualUser.cedula).then(res => {
         if (res) {
           this.terminada = (res["estado"] == "Finalizado") ? 1: 2;
-          if (this.terminada == 1 && res["resultado"] == "Aceptado") this.aproved = true; 
-          if (this.terminada == 1 && res["resultado"] != "Aceptado") this.aproved = false;
+          if (this.terminada == 1 && (res["resultado"] == "Aceptado" || res["resultado"] == "Aprobado")) this.aproved = true; 
+          if (this.terminada == 1 && (res["resultado"] != "Aceptado" && res["resultado"] != "Aprobado")) this.aproved = false;
           console.log(this);
         }
       });
