@@ -28,6 +28,8 @@ export class AccreditationPage implements OnInit {
   idAcreditador: any;
   tipoMedio: any;
   usuario: any = {};
+  ignos_ar = [];
+  virtus_ar = [];
   
 
   constructor(private activatedRoute: ActivatedRoute, private  acreditacionService:AcreditacionService, private authService: AuthService) { }
@@ -52,6 +54,8 @@ export class AccreditationPage implements OnInit {
       this.ignos = res["ignos"];
       this.tipoMedio = res["tipoMedio"];
       this.virtus = res["virtus"];
+      this.ignos_ar = [].constructor(Number(this.ignos));
+      this.virtus_ar = [].constructor(Number(this.virtus));
       this.usuario = res["acreditador"];
       console.log(this.authService.actualUser);
     });

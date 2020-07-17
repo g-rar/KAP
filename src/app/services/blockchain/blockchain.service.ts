@@ -12,7 +12,7 @@ export class BlockchainService {
   contratoUsuario:any;
   contratoAcreditacion:any;
   terminado = false;
-  cuenta = "0x7Ee2E8a8f5FA48F6479654391e2320737B0c40B9";
+  cuenta = "0xcb103aCAB94DdD73E9Ad18E47947f9AB9ef61577";
   
   constructor(private w3 : Web3Service) {
   }
