@@ -15,25 +15,20 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public user ={
     imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
-    name: this.authService.loggedIn ? this.authService.actualUser.first_name + this.authService.actualUser.last_name : "Anonymous"
+    name: this.authService.loggedIn ? this.authService.actualUser.first_name + " "+ this.authService.actualUser.last_name : "Anonymous"
   }
   
-  public menu =   
-  [  
+  public menu =
+  [
     {
     title : 'Acreditaciones',
     url   : '/accreditations',
     icon  : 'book-outline' 
     },
     { 
-    title : 'Mis Acreditaciones',  
-    url   : '/mis-acreditaciones',  
-    icon  : 'documents-outline'  
-    },
-    { 
-    title : 'Tutorial',  
-    url   : '/tutorial-acreditador',  
-    icon  : 'school-outline'  
+    title : 'Mis Acreditaciones',
+    url   : '/mis-acreditaciones',
+    icon  : 'documents-outline'
     }]
   public cuenta= [   
     {  
@@ -77,7 +72,7 @@ export class AppComponent implements OnInit {
     if(this.authService.acreditador){
       this.cambiarUsr.title='Cambiar a Acreditador';
       this.menuName='Aspirante';
-      this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
+      //this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
       this.navCtrl.navigateRoot(['/usermenu']);
       this.authService.acreditador=false
     }
@@ -85,7 +80,7 @@ export class AppComponent implements OnInit {
     else{
       this.cambiarUsr.title='Cambiar a Aspirante';
       this.menuName='Acreditador'
-      this.menu.find(element => element.title == "Tutorial").url="/tutorial-acreditador"
+      //this.menu.find(element => element.title == "Mis Acreditaciones").url="/tutorial-acreditador"
       this.navCtrl.navigateRoot(['/usermenu']);
       this.authService.acreditador=true
     }

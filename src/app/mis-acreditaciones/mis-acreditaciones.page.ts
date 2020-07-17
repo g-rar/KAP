@@ -11,14 +11,23 @@ import {User} from '../../models/user'
 })
 export class MisAcreditacionesPage implements OnInit {
   
-  acreditaciones:Acreditacion[]
+  acreditaciones = []
   user:User
   acreditador:boolean
   constructor(private authService:AuthService, private acreditationRegServ:AcreditationRegisterService ) { 
     this.user=authService.actualUser
-    this.acreditador=authService.acreditador
+    this.acreditador=authService.acreditador;
+    console.log(this.acreditador);
     if(this.acreditador){
-      this.acreditaciones=acreditationRegServ.consultarAcreditaciones(this.user.cedula)
+     acreditationRegServ.consultarAcreditaciones(this.user.cedula).then(res => {
+       console.log(res);
+      this.acreditaciones = res;
+     });
+    } else {
+      acreditationRegServ.consultarAspirancia(this.user.cedula).then(res => {
+        console.log(res);
+       this.acreditaciones = res;
+    });
     }
 
   }

@@ -12,30 +12,42 @@ export class AcreditationRegisterService {
       blockChain.initContracts()
     }
   }
-  private acreditaciones :  Acreditacion[]= [
-    {
-      titulo : "GESTA FRANCORUM",
-      idAcreditacion : 1,
-      idAcreditador : "12345678",
-      conocimiento : "Medicina:Medicina2:Medicina3",
-      tipoMedio: "Examen",
-      contenidos: ["1","2"],
-      descripcion: "Comes igitur et Boamundus perrexerunt ad Sancti Simeonis portum. Nos uero, qui remansimus, congregati in unum, castrum incipiebamus, dum Turei preparauerunt se ilico, et exierunt extra ciuitatem obuiam nobis ad prelium. Sic itaque irruerunt super nos, et miserunt nostros in fugam, occideruntque plures ex nostris, unde tristes ualde fuimus. ",
-      ignos:0,
-      virtus:0
-    }
 
-  ]
-  public consultarAcreditaciones(idAcreditador:String):Acreditacion[]{ 
-    return [this.acreditaciones.find(res => res.idAcreditador=idAcreditador)]
+  async consultarAcreditaciones(idAcreditador){ 
+    await this.blockChain.initContracts();
+    let acreditaciones = await this.blockChain.getAcreditaciones();
+    let res = [];
+    for (let acre of acreditaciones) {
+      if (acre["idAcreditador"] == idAcreditador) res.push(acre);
+    }
+    return res;
   }
+
+  async consultarAspirancia(idAspirante){ 
+    await this.blockChain.initContracts();
+    let acreditaciones = await this.blockChain.getAcreditaciones();
+    let aspirantes = await this.blockChain.getAspirantes();
+    let res = [];
+    for (let acre of acreditaciones) {
+      for (let asp of aspirantes) {
+        if (asp["idAcreditacion"] == acre["idAcreditacion"]) {
+          if (asp["idAspirante"] == idAspirante) res.push(acre);
+        }
+      }
+      
+    }
+    return res;
+  }
+
+
   public async registrarAcreditacion(acreditacion:Acreditacion ){
-    acreditacion.idAcreditacion=this.acreditaciones.length;
+    let acreditaciones = await this.blockChain.getAcreditaciones();
+    acreditacion.idAcreditacion=acreditaciones.length;
     this.blockChain.agregarAcreditacion(acreditacion).then((result)=>{
       console.log(result);
     })
-    this.acreditaciones.push(acreditacion);
-    console.log(this.acreditaciones);
+    acreditaciones.push(acreditacion);
+    console.log(acreditaciones);
   }
 
 }
