@@ -27,7 +27,7 @@
                 </ion-label>
               </ion-item>
             </ion-menu-toggle>
-            <ion-menu-toggle autoHide="false" *ngIf = "acreditador">
+            <ion-menu-toggle autoHide="false" *ngIf = "authService.acreditador">
               <ion-item [routerLink]="crearAcreditacion.url" routerLinkActive="selected" routerDirection="root" detail="false">
                 <ion-icon slot="start" [name]="crearAcreditacion.icon"></ion-icon>
                 <ion-label>               

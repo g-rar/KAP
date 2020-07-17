@@ -42,7 +42,7 @@
   
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" (click)="onSubmitRegister(RegisterForm.value)" expand="block">Crear cuenta</ion-button>
+          <ion-button [disabled]="!RegisterForm.valid" type="submit" color="danger" (click)="onSubmitRegister(RegisterForm.value)" expand="block">Crear cuenta</ion-button>
         </ion-col>
       </ion-row>
     </form>

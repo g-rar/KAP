@@ -21,7 +21,7 @@ export class AuthService {
     }
 
   ]
-
+  public acreditador=true
   public actualUser : User = 
   {
     first_name : "hola",
@@ -32,6 +32,7 @@ export class AuthService {
     password: "password",
     redes : [""]
   };
+
 
   login(email:string,password:string){
     return new Promise((resolve,rejected)=>{

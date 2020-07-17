@@ -9,7 +9,7 @@ import { AcreditacionService } from '../providers/acreditacion.service';
 export class BusquedaPipe implements PipeTransform {
   constructor(private httpService: HttpClient, private acreditacionService:AcreditacionService) { 
   
-  this.acreditacionService.getAreas().subscribe(resp=>this.areas=resp);
+  
   
   }
   acreditaciones:any[]=[];
@@ -21,7 +21,6 @@ export class BusquedaPipe implements PipeTransform {
   transform(areas1: any[], texto: string): any[] {
   
     if(texto.length === 0){
-      this.acreditacionService.getAreas().subscribe(resp=>areas1=resp);
       return areas1;
     }
    
@@ -35,7 +34,6 @@ export class BusquedaPipe implements PipeTransform {
           return true;
         }
         if(area.acreditaciones){
-
           this.acreditaciones=area.acreditaciones.filter(acreditacion=>{
             //console.log(acreditacion.nombre.toLocaleLowerCase().includes(texto));
             return acreditacion.nombre.toLocaleLowerCase().includes(texto);
@@ -96,9 +94,7 @@ export class BusquedaPipe implements PipeTransform {
           return true;
         }
         return false;
-        /*console.log(area.nombre.toLocaleLowerCase().includes(texto));
-         return area.nombre.toLocaleLowerCase().includes(texto);
-      */}
+      }
     );
     return this.areas;
 }}

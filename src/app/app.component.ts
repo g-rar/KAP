@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { NavController } from '@ionic/angular';
+import { AuthService} from './services/auth.service'
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -57,18 +58,21 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public authService:AuthService
   ) {
     this.initializeApp();
+    this.acreditador=authService.acreditador
+    
   }
 
   cambiarUsuario(){
-    if(this.acreditador){
+    if(this.authService.acreditador){
       this.cambiarUsr.title='Cambiar a Acreditador';
       this.menuName='Aspirante';
       this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
       this.navCtrl.navigateRoot(['/usermenu']);
-      this.acreditador = false;
+      this.authService.acreditador=false
       }
      
       else{
@@ -76,7 +80,7 @@ export class AppComponent implements OnInit {
           this.menuName='Acreditador'
           this.menu.find(element => element.title == "Tutorial").url="/tutorial-acreditador"
           this.navCtrl.navigateRoot(['/usermenu']);
-          this.acreditador=true
+          this.authService.acreditador=true
       }
 
     }
