@@ -70,4 +70,8 @@ export class AccreditationPage implements OnInit {
       });
     });
   }
+
+  inscribirse(){
+    this.terminada = 2;
+  }
 }

@@ -70,8 +70,12 @@
       <ion-icon *ngFor="let i of  virtus_ar" color="success" name="leaf-sharp" item-start></ion-icon>
       <br><br>
     </ion-label>
-    <ion-button color="primary" (click)="true" *ngIf="!soyYo && !acreditador && terminada == 0"> Inscribirse en
+    <ion-button color="primary" (click)="inscribirse()" *ngIf="!soyYo && !acreditador && terminada == 0"> Inscribirse en
       Acreditación</ion-button>
+
+    <ion-button color="primary" disabled (click)="true" *ngIf="!soyYo && !acreditador && terminada == 2"> Inscrito
+    </ion-button>
+
     <ion-button color="primary" [routerLink]="['/form-ignos']" *ngIf="!soyYo && acreditador"> Validar Acreditación
     </ion-button>
     <ion-button color="primary" [routerLink]="['/form-virtus']" *ngIf="!soyYo && !acreditador && terminada == 1">
