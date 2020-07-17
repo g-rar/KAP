@@ -44,10 +44,10 @@ export class CrearAcreditacionPage implements OnInit {
               private authService : AuthService,
               private acreditacionService:AcreditacionService,
               public navCtrl: NavController) { 
-    //this.acreditacionService.getAreas().subscribe(resp=>{
-    //  this.areas=resp;
-    //  this.setAreasNames();
-    //})
+    this.acreditacionService.getAreas().then(res => {
+      this.areas = res;
+      this.setAreasNames();
+    });
   }
   
   addContent(){
@@ -98,6 +98,7 @@ export class CrearAcreditacionPage implements OnInit {
   }
 
   setAreasNames(){
+
     var areasNames:String[] = []
     for (let area of this.areas){
       areasNames.push(area.nombre)

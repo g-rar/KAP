@@ -51,8 +51,8 @@ export class AppComponent implements OnInit {
     url   : '/crear-acreditacion',  
     icon  : 'add-outline'  
   }
-  public acreditador = true;
-  protected menuName = "Acreditador";
+  public acreditador = false;
+  protected menuName = "Aspirante";
   protected tutorial
 
   constructor(

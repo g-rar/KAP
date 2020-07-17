@@ -41,7 +41,7 @@ export class AuthService {
     }
 
   ]
-  public acreditador=true
+  public acreditador=false;
   public actualUser : User = 
   {
     first_name : "hola",

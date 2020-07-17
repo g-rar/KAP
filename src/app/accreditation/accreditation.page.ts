@@ -30,6 +30,9 @@ export class AccreditationPage implements OnInit {
   usuario: any = {};
   ignos_ar = [];
   virtus_ar = [];
+  acreditador = false;
+  soyYo = false;
+  terminada: any = 0;
   
 
   constructor(private activatedRoute: ActivatedRoute, private  acreditacionService:AcreditacionService, private authService: AuthService) { }
@@ -57,12 +60,14 @@ export class AccreditationPage implements OnInit {
       this.ignos_ar = [].constructor(Number(this.ignos));
       this.virtus_ar = [].constructor(Number(this.virtus));
       this.usuario = res["acreditador"];
-      console.log(this.authService.actualUser);
+      this.acreditador = this.authService.acreditador;
+      this.soyYo = this.authService.actualUser.cedula == this.usuario.cedula;
+      
+      this.acreditacionService.getAspiranteAcreditacion(this.idAcreditacion, this.usuario.cedula).then(res => {
+        if (res) {
+          this.terminada = (res["estado"] == "Finalizada") ? 1: 2;
+        }
+      });
     });
-
   }
-
-
- 
-
 }

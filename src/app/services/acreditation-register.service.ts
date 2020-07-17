@@ -27,12 +27,12 @@ export class AcreditationRegisterService {
 
   ]
   public async registrarAcreditacion(acreditacion:Acreditacion ){
-    acreditacion.idAcreditacion=this.acreditaciones.length
+    acreditacion.idAcreditacion=this.acreditaciones.length;
     this.blockChain.agregarAcreditacion(acreditacion).then((result)=>{
       console.log(result);
     })
-    this.acreditaciones.push(acreditacion)
-    console.log(this.acreditaciones)
+    this.acreditaciones.push(acreditacion);
+    console.log(this.acreditaciones);
   }
 
 }

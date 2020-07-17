@@ -80,4 +80,15 @@ export class AcreditacionService {
       }
     }
   } 
+
+  async getAspiranteAcreditacion(idAcreditacion, cedula) {
+    await this.blockchain.initContracts();
+    let aspirantes = await this.blockchain.getAspirantes(); 
+    for (let aspirante of aspirantes) {
+      if (aspirante["idAcreditacion"] == idAcreditacion &&
+          aspirante["idAspirante"] == cedula) {
+        return aspirante;  
+      }
+    }
+  } 
 }

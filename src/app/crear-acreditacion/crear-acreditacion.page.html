@@ -3,90 +3,93 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="usermenu"> </ion-back-button>
     </ion-buttons>
-    <ion-title >Crear Acreditación</ion-title>
+    <ion-title>Crear Acreditación</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-card>
-  <ion-list>
-  <ion-item class = "bef">
-    <ion-label position = "floating" >Titulo:</ion-label>
-    <ion-input [(ngModel)]="acreditacion.titulo"></ion-input>
+    <ion-list>
+      <ion-item class="bef">
+        <ion-label position="floating">Titulo:</ion-label>
+        <ion-input [(ngModel)]="acreditacion.titulo"></ion-input>
 
-  </ion-item> 
-    <ion-item>
-      <ion-label position = "floating" >Descripcion:</ion-label>
-      <ion-textarea [(ngModel)]="acreditacion.descripcion" rows = "5"></ion-textarea>
-    </ion-item>
-    <ion-item>
-      <ion-label position = "floating" >Medio de Evaluación:</ion-label>
-      <ion-input [(ngModel)]="acreditacion.tipoMedio" ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position = "floating" >Agregar contenido:</ion-label>
-  
-      <ion-input [(ngModel)]="content" ></ion-input>
-       <ion-buttons slot = "end">
-          <ion-button shape="round" icon-only (click)= "addContent()">
-          <ion-icon shape="circle" name="add-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
       </ion-item>
-    <ion-card class= "contenidos">
-      <ion-card-header>
-        <ion-label>Contenidos:</ion-label>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item class ="contenido" *ngFor="let content of acreditacion.contenidos; index as i">
+      <ion-item>
+        <ion-label position="floating">Descripción:</ion-label>
+        <ion-textarea [(ngModel)]="acreditacion.descripcion" rows="5"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Medio de Evaluación:</ion-label>
+        <ion-input [(ngModel)]="acreditacion.tipoMedio"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Agregar contenido:</ion-label>
+
+        <ion-input [(ngModel)]="content"></ion-input>
+        <ion-buttons slot="end">
+          <ion-button shape="round" icon-only (click)="addContent()">
+            <ion-icon shape="circle" name="add-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+      <ion-card class="contenidos">
+        <ion-card-header>
+          <ion-label>Contenidos:</ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item class="contenido" *ngFor="let content of acreditacion.contenidos; index as i">
             {{i+1}}. {{content}}
-            <ion-buttons slot = "end">
-              <ion-button shape="round" icon-only (click)= "removeContent(i)">
-              <ion-icon shape="circle" name="trash-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-item>
-      </ion-card-content>
+            <ion-buttons slot="end">
+              <ion-button shape="round" icon-only (click)="removeContent(i)">
+                <ion-icon shape="circle" name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-item>
+        <ion-label position="floating">Seleccione Área:</ion-label>
+        <ion-select name="sArea" interface="action-sheet" class="custom-options" [(ngModel)]="area"
+          (ionChange)="onSelectChange($event)">
+          <ion-item *ngFor="let area of areasNombres">
+            <ion-select-option (value)="area">{{area}}</ion-select-option>
+          </ion-item>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="ramas.length>0">
+        <ion-label position="floating">Seleccione Rama (Opcional):</ion-label>
+        <ion-select name="sRama" interface="action-sheet" class="custom-options" [(ngModel)]="rama"
+          (ionChange)="onSelectChange($event)">
+          <ion-item *ngFor="let rama of ramasNombres">
+            <ion-select-option (value)="rama">{{rama}}</ion-select-option>
+          </ion-item>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="especializacionesNombres.length>0">
+        <ion-label position="floating">Seleccione Especialización (Opcional):</ion-label>
+        <ion-select name="sEspecializacion" interface="action-sheet" class="custom-options"
+          [(ngModel)]="especializacion" (ionChange)="onSelectChange($event)">
+          <ion-item *ngFor="let espc of especializacionesNombres">
+            <ion-select-option (value)="espc">{{espc}}</ion-select-option>
+          </ion-item>
+        </ion-select>
+      </ion-item>
+      <ion-item class="custom">
+        <ion-col align-self-center>
+          <ion-button (click)="registrarAcreditacion()" shape="round" expand="block" color="primary">
+            <ion-label>Registrar Acreditación</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-item>
+
+
+
+
+    </ion-list>
   </ion-card>
-
-
-  <ion-item>
-    <ion-label position = "floating">Seleccione Area:</ion-label>
-    <ion-select name = "sArea" interface="action-sheet" class="custom-options" [(ngModel)]="area" (ionChange)="onSelectChange($event)">
-      <ion-item  *ngFor="let area of areasNombres">
-        <ion-select-option (value)="area">{{area}}</ion-select-option>
-      </ion-item>
-    </ion-select>
-  </ion-item>
-  <ion-item *ngIf="ramas.length>0">
-    <ion-label position = "floating">Seleccione Rama (Opcional):</ion-label>
-    <ion-select name = "sRama" interface="action-sheet" class="custom-options" [(ngModel)]="rama" (ionChange)="onSelectChange($event)" >
-      <ion-item  *ngFor="let rama of ramasNombres">
-        <ion-select-option  (value)="rama">{{rama}}</ion-select-option>
-      </ion-item>
-    </ion-select>
-    </ion-item>
-    <ion-item *ngIf="especializacionesNombres.length>0">
-      <ion-label position = "floating">Seleccione Especialización (Opcional):</ion-label>
-      <ion-select name = "sEspecializacion" interface="action-sheet" class="custom-options" [(ngModel)]="especializacion" (ionChange)="onSelectChange($event)" >
-        <ion-item  *ngFor="let espc of especializacionesNombres">
-          <ion-select-option  (value)="espc">{{espc}}</ion-select-option>
-        </ion-item>
-      </ion-select>
-      </ion-item>
-    <ion-item class="custom">
-      <ion-col align-self-center>
-      <ion-button (click)="registrarAcreditacion()" shape="round" expand="block" color="primary">
-        <ion-label>Registrar Acreditación</ion-label>
-      </ion-button>
-      </ion-col>
-    </ion-item>
-
- 
-
-
-</ion-list>
-</ion-card>
 
 </ion-content>
