@@ -15,7 +15,10 @@
         {{acreditacion.titulo}}
       </ion-card-title>
       <ion-card-content>
-        <ion-text class="ion-text-justify">{{acreditacion.descripcion.substring(0,249)}}...</ion-text>
+        <ion-text class="ion-text-justify">{{acreditacion.descripcion.substring(0,249)}}<ion-label
+            *ngIf="acreditacion.descripcion.length>249">...</ion-label>
+        </ion-text>
+
       </ion-card-content>
       <ion-card-subtitle class="ion-text-end">
         <a *ngFor="let conocimiento of acreditacion.conocimiento.split(':'); let i = index">

@@ -60,9 +60,9 @@ export class CrearAcreditacionPage implements OnInit {
     var result:String;
     result = this.area;
     if(this.rama!=""){
-      result += ':' +this.rama
+      result += ': ' +this.rama
       if(this.especializacion!=""){
-        result += ':' + this.especializacion
+        result += ': ' + this.especializacion
       }
     }
     this.acreditacion.conocimiento=result
@@ -72,7 +72,8 @@ export class CrearAcreditacionPage implements OnInit {
     const ac = {...this.acreditacion}
     if(ac.conocimiento!="" && ac.contenidos !=[] && ac.descripcion!="" &&
        ac.tipoMedio!="" && ac.titulo!=""){
-
+      console.log(ac);
+      
       this.alertservice.presentAlert("","Acreditación registrada con exito")
       this.limpiarDatos()
       this.acredRegService.registrarAcreditacion(ac)
