@@ -1,17 +1,19 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button  [routerLink]="['/usermenu']">KAP </ion-button>
+      <ion-button [routerLink]="['/usermenu']">KAP </ion-button>
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    
+
     <ion-title *ngIf="!ios && !showSearchbar">Acreditaciones</ion-title>
-    <ion-searchbar #search *ngIf="showSearchbar" animated (ionChange)="buscarAcreditacion($event)" showCancelButton="always" (ionCancel)= "(showSearchbar=false);buscarAcreditacion($event)"   placeholder="Search"></ion-searchbar>
-  <ion-buttons slot ="end">
-    <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
-      <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button>
-  </ion-buttons>
+    <ion-searchbar #search *ngIf="showSearchbar" animated (ionChange)="buscarAcreditacion($event)"
+      showCancelButton="always" (ionCancel)="(showSearchbar=false);buscarAcreditacion($event)" placeholder="Search">
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <!--ion-searchbar *ngIf="showSearchbar" showCancelButton="always" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
@@ -27,44 +29,59 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content fullscreen="true" (load)="iniciarAreas()">
+  <ion-list *ngFor="let area of areas|busqueda:textoBuscar; let ai = index">
+    <ion-title tappable color="primary" (click)="menuAreaDatos(area,ai)">
+      <ion-icon name="school-sharp" item-start></ion-icon> {{area.nombre}}
+    </ion-title>
+    <ion-list id="{{'acreditacionesA'+ai}}" *ngIf="area.acreditaciones&& area.acreditaciones.length>0" lines="none">
+      <ion-label tappable (click)="abrirMenu(area.nombre+0,area.acreditaciones.length)" color="secondary">
+        <ion-icon name="bookmarks-sharp" item-start></ion-icon> Acreditaciones
+      </ion-label>
+      <ion-item id="{{(area.nombre+0)+a_ai}}" [routerLink]="[a_acr.idAcreditacion]"
+        *ngFor="let a_acr of area.acreditaciones; let a_ai = index">
+        <ion-label>
+          <ion-icon name="bookmark-sharp" item-start></ion-icon> {{a_acr.titulo}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list id="{{'ramas'+ai}}" lines="none" *ngIf="area.ramas && area.ramas.length>0">
+      <ion-label tappable (click)="abrirMenu(area.nombre+1,area.ramas.length)" color="secondary">Ramas</ion-label>
+      <ion-list id="{{(area.nombre+1)+r_ai}}" class="listaRamas" *ngFor="let rama of area.ramas;let r_ai=index">
+        <ion-label>
+          <ion-icon name="aperture-sharp" item-start></ion-icon> {{rama.nombre}}
+        </ion-label>
+        <ion-list class="listaSubRama" *ngIf="rama.acreditaciones && rama.acreditaciones.length>0">
+          <ion-label color="tertiary">
+            <ion-icon name="book-sharp" item-start></ion-icon> Acreditaciones
+          </ion-label>
 
-<ion-content fullscreen="true">
-  <ion-list  *ngFor="let area of areas|busqueda:textoBuscar; let ai = index">
-    <ion-title tappable  color="primary" (click)="menuAreaDatos(area,ai)">  <ion-icon name="school-sharp" item-start></ion-icon> {{area.nombre}} </ion-title>
-      <ion-list  id="{{'acreditacionesA'+ai}}" *ngIf="area.acreditaciones&& area.acreditaciones.length>0"  lines="none" >
-        <ion-label  tappable (click)="abrirMenu(area.nombre+0,area.acreditaciones.length)" color="secondary" > 
-          <ion-icon name="bookmarks-sharp" item-start></ion-icon> Acreditaciones</ion-label>
-          <ion-item   id="{{(area.nombre+0)+a_ai}}"  
-                    [routerLink]="[area.nombre+'¬'+a_acr.nombre]"  *ngFor="let a_acr of area.acreditaciones; let a_ai = index">
-            <ion-label ><ion-icon name="bookmark-sharp" item-start></ion-icon> {{a_acr.nombre}}</ion-label>
-          </ion-item> 
-      </ion-list>
-    <ion-list  id="{{'ramas'+ai}}" lines="none" *ngIf="area.ramas && area.ramas.length>0">
-          <ion-label  tappable (click)="abrirMenu(area.nombre+1,area.ramas.length)" color="secondary">Ramas</ion-label>
-            <ion-list id="{{(area.nombre+1)+r_ai}}"   class="listaRamas" *ngFor="let rama of area.ramas;let r_ai=index">
-              <ion-label> 
-                <ion-icon name="aperture-sharp" item-start></ion-icon> {{rama.nombre}} </ion-label>
-                <ion-list class="listaSubRama" *ngIf="rama.acreditaciones && rama.acreditaciones.length>0">
-                  <ion-label color="tertiary"><ion-icon name="book-sharp" item-start></ion-icon> Acreditaciones</ion-label>
-                  
-                  <ion-item  [routerLink]="[area.nombre+'¬'+rama.nombre+'¬'+r_acr.nombre]"  *ngFor="let r_acr of rama.acreditaciones">
-                      <ion-label><ion-icon name="bookmark-sharp" item-start></ion-icon> {{r_acr.nombre}}</ion-label>
-                    </ion-item>
-                </ion-list>
-              <ion-list  class="listaSubRama" lines="none" *ngIf="rama.especializaciones && rama.especializaciones.length>0">
-                  <ion-label color="tertiary">Especializaciones</ion-label>
-                <ion-list  class="listaSubRama" *ngFor="let esp of rama.especializaciones">
-                  <ion-label><ion-icon name="caret-forward-sharp" item-start></ion-icon> {{esp.nombre}}</ion-label>
-                  <ion-list class="listaSubEsp" lines="none" *ngIf="esp.acreditaciones && esp.acreditaciones.length>0">
-                      <ion-label color="success"><ion-icon name="book-sharp" item-start></ion-icon> Acreditaciones</ion-label>
-                        <ion-item [routerLink]="[area.nombre+'¬'+rama.nombre+'¬'+esp.nombre+'¬'+e_acr.nombre]"  *ngFor="let e_acr of esp.acreditaciones">
-                          <ion-label><ion-icon name="bookmark-sharp" item-start></ion-icon> {{e_acr.nombre}}</ion-label>
-                        </ion-item>
-                  </ion-list>
-                </ion-list>
-              </ion-list>
+          <ion-item [routerLink]="[r_acr.idAcreditacion]" *ngFor="let r_acr of rama.acreditaciones">
+            <ion-label>
+              <ion-icon name="bookmark-sharp" item-start></ion-icon> {{r_acr.titulo}}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-list class="listaSubRama" lines="none" *ngIf="rama.especializaciones && rama.especializaciones.length>0">
+          <ion-label color="tertiary">Especializaciones</ion-label>
+          <ion-list class="listaSubRama" *ngFor="let esp of rama.especializaciones">
+            <ion-label>
+              <ion-icon name="caret-forward-sharp" item-start></ion-icon> {{esp.nombre}}
+            </ion-label>
+            <ion-list class="listaSubEsp" lines="none" *ngIf="esp.acreditaciones && esp.acreditaciones.length>0">
+              <ion-label color="success">
+                <ion-icon name="book-sharp" item-start></ion-icon> Acreditaciones
+              </ion-label>
+              <ion-item [routerLink]="[e_acr.idAcreditacion]" *ngFor="let e_acr of esp.acreditaciones">
+                <ion-label>
+                  <ion-icon name="bookmark-sharp" item-start></ion-icon> {{e_acr.titulo}}
+                </ion-label>
+              </ion-item>
             </ion-list>
-       </ion-list> 
+          </ion-list>
+        </ion-list>
+      </ion-list>
+    </ion-list>
   </ion-list>
 
 

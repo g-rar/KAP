@@ -10,19 +10,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./accreditations.page.scss'],
 })
 export class AccreditationsPage implements OnInit{
-  areas: any[] =[]; 
-  saveArea:any[]=[];
+  areas = []; 
+  saveArea = [];
   textoBuscar = '';
   texto2='';
   constructor(
     private  acreditacionService:AcreditacionService, 
     private accreditationData:AccreditationDataService,
     private router: Router) { 
-      this.acreditacionService.getAreas().subscribe(resp=>this.saveArea=resp);
-      this.acreditacionService.getAreas().subscribe(resp=>this.areas=resp);  
+      this.acreditacionService.getAreas().then(res => this.areas = res);
     }
 
-  abrirMenu(conocimiento,cantidad){
+  async iniciarAreas() {
+    console.log("Hola");
+    //if (this.areas == []) this.areas = this.saveArea = await ;
+    console.log(this.areas);
+    return true;
+  }
+
+  async abrirMenu(conocimiento,cantidad){
+    this.iniciarAreas();
+  
+  
   for (let i = 0; i < cantidad; i++){
     let hola=document.getElementById(conocimiento+i).hidden;
     if(document.getElementById(conocimiento+i)!==null){

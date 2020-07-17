@@ -11,8 +11,8 @@ export class BlockchainService {
 
   contratoUsuario:any;
   contratoAcreditacion:any;
-  senderAccount:string = "0x8E213FfC9528b328a7dbC31a413A72259378858A"; 
   terminado = false;
+  cuenta = "0x7Ee2E8a8f5FA48F6479654391e2320737B0c40B9";
   
   constructor(private w3 : Web3Service) {
   }
@@ -29,7 +29,7 @@ export class BlockchainService {
   /* Usuario */
 
   async agregarUsuario(usuario) {
-    await this.contratoUsuario.agregarUsuario.sendTransaction(usuario, {from: this.senderAccount}).then((result) => {
+    await this.contratoUsuario.agregarUsuario.sendTransaction(usuario, {from: this.cuenta}).then((result) => {
       console.log(result);
     });
   }
@@ -47,11 +47,11 @@ export class BlockchainService {
   /* Acreditacion */
 
   async agregarAcreditacion(acreditacion) {
-    await this.contratoAcreditacion.agregarAcreditacion.sendTransaction(acreditacion, {from: this.senderAccount});
+    await this.contratoAcreditacion.agregarAcreditacion.sendTransaction(acreditacion, {from: this.cuenta});
   }
   
-  async getAcreditacion(conocimiento, titulo) {
-    await this.contratoAcreditacion.getAcreditacion(conocimiento, titulo);
+  async getAcreditacion(idAcreditacion) {
+    await this.contratoAcreditacion.getAcreditacion(idAcreditacion);
   }
 
   async getAcreditaciones() {
@@ -62,7 +62,7 @@ export class BlockchainService {
   /* AspiranteAcreditacion */
 
   async agregarAspiranteAcreditacion(aspiranteAcreditacion) {
-    await this.contratoAcreditacion.agregarAspiranteAcreditacion.sendTransaction(aspiranteAcreditacion, {from: this.senderAccount});
+    await this.contratoAcreditacion.agregarAspiranteAcreditacion.sendTransaction(aspiranteAcreditacion, {from: this.cuenta});
   }
   
   async getAspiranteAcreditacion(cedula, idAcreditacion) {
