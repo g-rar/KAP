@@ -14,18 +14,21 @@ export class AcreditationRegisterService {
   }
   private acreditaciones :  Acreditacion[]= [
     {
-      titulo : "hola",
+      titulo : "GESTA FRANCORUM",
       idAcreditacion : 1,
       idAcreditador : "12345678",
-      conocimiento : "Medicina",
+      conocimiento : "Medicina:Medicina2:Medicina3",
       tipoMedio: "Examen",
       contenidos: ["1","2"],
-      descripcion: "HOLA",
+      descripcion: "Comes igitur et Boamundus perrexerunt ad Sancti Simeonis portum. Nos uero, qui remansimus, congregati in unum, castrum incipiebamus, dum Turei preparauerunt se ilico, et exierunt extra ciuitatem obuiam nobis ad prelium. Sic itaque irruerunt super nos, et miserunt nostros in fugam, occideruntque plures ex nostris, unde tristes ualde fuimus. ",
       ignos:0,
       virtus:0
     }
 
   ]
+  public consultarAcreditaciones(idAcreditador:String):Acreditacion[]{ 
+    return [this.acreditaciones.find(res => res.idAcreditador=idAcreditador)]
+  }
   public async registrarAcreditacion(acreditacion:Acreditacion ){
     acreditacion.idAcreditacion=this.acreditaciones.length;
     this.blockChain.agregarAcreditacion(acreditacion).then((result)=>{

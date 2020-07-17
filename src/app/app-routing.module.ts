@@ -59,6 +59,10 @@ const routes: Routes = [
   },  {
     path: 'lista-aspirantes',
     loadChildren: () => import('./lista-aspirantes/lista-aspirantes.module').then( m => m.ListaAspirantesPageModule)
+  },
+  {
+    path: 'mis-acreditaciones',
+    loadChildren: () => import('./mis-acreditaciones/mis-acreditaciones.module').then( m => m.MisAcreditacionesPageModule)
   }
 
 
