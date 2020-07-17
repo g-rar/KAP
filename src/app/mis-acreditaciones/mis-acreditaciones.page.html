@@ -18,10 +18,17 @@
         <ion-text class="ion-text-justify">{{acreditacion.descripcion.substring(0,249)}}...</ion-text>
       </ion-card-content>
       <ion-card-subtitle class="ion-text-end">
-        <ion-button shape="round" size="small" class="conocimiento"
-          *ngFor="let conocimiento of acreditacion.conocimiento.split(':')" color="danger">
-          <ion-label>{{conocimiento}}</ion-label>
-        </ion-button>
+        <a *ngFor="let conocimiento of acreditacion.conocimiento.split(':'); let i = index">
+          <ion-button *ngIf="i===0" shape="round" disabled="true" size="small" class="conocimiento" color="primary">
+            <ion-label>{{conocimiento}}</ion-label>
+          </ion-button>
+          <ion-button *ngIf="i===1" shape="round" disabled="true" size="small" class="conocimiento" color="secondary">
+            <ion-label>{{conocimiento}}</ion-label>
+          </ion-button>
+          <ion-button *ngIf="i===2" shape="round" disabled="true" size="small" class="conocimiento" color="tertiary">
+            <ion-label>{{conocimiento}}</ion-label>
+          </ion-button>
+        </a>
       </ion-card-subtitle>
 
 
