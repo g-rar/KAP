@@ -9,12 +9,20 @@ import {User} from '../../models/user';
 })
 export class AuthService {
 
+  private sesion = window.localStorage;
+  loggedIn:boolean = false;
+
   constructor(private blockChain: BlockchainService) { 
     if(!blockChain.terminado){
       blockChain.initContracts().then(() => this.getUsuarios());
     } else {
       this.getUsuarios();
     }
+    let user = JSON.parse( this.sesion.getItem("user") ) as User
+    if(user){
+      this.loggedIn = true
+      this.actualUser = user;
+    } 
   }
 
   private async getUsuarios() {
@@ -54,6 +62,7 @@ export class AuthService {
         )
       }
       this.actualUser = user;
+      this.sesion.setItem("user",JSON.stringify(user));
       if (Object.keys(user).length === 0){
         rejected(null);
       }

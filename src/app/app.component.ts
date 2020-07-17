@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public user ={
     imageURL:"https://recap-project.eu/wp-content/uploads/2017/02/default-user.jpg",
-    name:"Fernanda Ruiz"
+    name: this.authService.loggedIn ? this.authService.actualUser.first_name + this.authService.actualUser.last_name : "Anonymous"
   }
   
   public menu =   
