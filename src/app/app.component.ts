@@ -18,16 +18,21 @@ export class AppComponent implements OnInit {
   }
   
   public menu =   
-    [  
-    { 
+  [  
+    {
     title : 'Acreditaciones',
     url   : '/accreditations',
     icon  : 'book-outline' 
     },
     { 
+    title : 'Mis Acreditaciones',  
+    url   : '/mis-acreditaciones',  
+    icon  : 'documents-outline'  
+    },
+    { 
     title : 'Tutorial',  
     url   : '/tutorial-acreditador',  
-    icon  : 'document-outline'  
+    icon  : 'school-outline'  
     }]
   public cuenta= [   
     {  
