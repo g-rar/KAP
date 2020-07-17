@@ -5,19 +5,70 @@
       <ion-menu-button>
 
       </ion-menu-button>
-      <ion-title>Knowledge Accreditation Platform</ion-title>
+      <ion-title>Inicio</ion-title>
 
     </ion-buttons>
-
-    <ion-button disabled="true" class="conocimiento" color="primary"> HOLA </ion-button>
-    <ion-button disabled="true" class="conocimiento" color="secondary"> HOLA </ion-button>
-    <ion-button disabled="true" class="conocimiento" color="tertiary">HOLA </ion-button>
-
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="background">
+
+  <ion-card style="padding:1rem" text-center>
+    <ion-card-title class="ion-text-center">
+      <ion-text class="font-size:50px"> Knowledge Accreditation Platform </ion-text>
+    </ion-card-title>
+
+  </ion-card>
+
+  <ion-card style=" padding:1rem" text-center [routerLink]="['/accreditations']">
+    <ion-card-title class="ion-text-center">
+      <ion-icon name="book-outline"></ion-icon> Acreditaciones
+      <ion-icon name="book-outline"></ion-icon>
+    </ion-card-title>
+    <ion-card-content>
+      <ion-text class="ion-text-justify"> Consulte la lista de todas las acreditaciones disponibles de la plataforma
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="padding:1rem" text-center [routerLink]="['/mis-acreditaciones']">
+    <ion-card-title class="ion-text-center">
+      <ion-icon name="documents-outline"></ion-icon> Mis Acreditaciones
+      <ion-icon name="documents-outline"></ion-icon>
+    </ion-card-title>
+    <ion-card-content>
+      <ion-text class="ion-text-justify"> Consulte la lista de las acreditaciones creadas por usted o en que se
+        encuentra inscrito
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="padding:1rem" *ngIf="auth.acreditador" text-center [routerLink]="['/crear-acreditacion']">
+    <ion-card-title class="ion-text-center">
+      <ion-icon name="add-circle-outline"></ion-icon> Crear Acreditación
+      <ion-icon name="add-circle-outline"></ion-icon>
+
+    </ion-card-title>
+    <ion-card-content>
+      <ion-text class="ion-text-justify"> Cree una acreditación para validar los conocimientos de otros
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="padding:1rem" text-center [routerLink]="['/user-settings']">
+    <ion-card-title class="ion-text-center">
+      <ion-icon name="person-outline"></ion-icon> Información de Perfil
+      <ion-icon name="person-outline"></ion-icon>
+
+    </ion-card-title>
+    <ion-card-content>
+      <ion-text class="ion-text-justify"> Consulte y actualice sus datos de perfil e información personal
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
 
 

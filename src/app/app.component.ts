@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, AlertController, ToastController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { NavController } from '@ionic/angular';
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
   public crearAcreditacion = {
     title : 'Crear Acreditación',  
     url   : '/crear-acreditacion',  
-    icon  : 'add-outline'  
+    icon  : 'add-circle-outline'  
   }
   public acreditador = false;
   protected menuName = "Aspirante";
@@ -61,20 +61,27 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     public navCtrl: NavController,
     private blockchain: BlockchainService,
-    public authService:AuthService
+    public authService:AuthService,
+    public toastController: ToastController
   ) {
     this.initializeApp();
     this.acreditador=authService.acreditador
     
   }
 
-  cambiarUsuario(){
+  async cambiarUsuario(){
     if(this.authService.acreditador){
       this.cambiarUsr.title='Cambiar a Acreditador';
       this.menuName='Aspirante';
       //this.menu.find(element => element.title == "Tutorial").url="/tutorial-aspirante"
       this.navCtrl.navigateRoot(['/usermenu']);
       this.authService.acreditador=false
+      const toast = await this.toastController.create({
+        message: '¡Ahora eres aspirante!',
+        color: 'light',
+        duration: 2000
+      });
+      toast.present();
     }
      
     else{
@@ -82,7 +89,13 @@ export class AppComponent implements OnInit {
       this.menuName='Acreditador'
       //this.menu.find(element => element.title == "Mis Acreditaciones").url="/tutorial-acreditador"
       this.navCtrl.navigateRoot(['/usermenu']);
-      this.authService.acreditador=true
+      this.authService.acreditador=true;
+      const toast = await this.toastController.create({
+        message: '¡Ahora eres acreditador!',
+        color: 'light',
+        duration: 2000
+      });
+      toast.present();
     }
 
     }

@@ -84,6 +84,7 @@ export class AcreditacionService {
   async getAspiranteAcreditacion(idAcreditacion, cedula) {
     await this.blockchain.initContracts();
     let aspirantes = await this.blockchain.getAspirantes(); 
+    console.log(aspirantes, idAcreditacion, cedula);
     for (let aspirante of aspirantes) {
       if (aspirante["idAcreditacion"] == idAcreditacion &&
           aspirante["idAspirante"] == cedula) {

@@ -47,7 +47,7 @@ contract ServiciosUsuario {
         usuario_3.first_name = "Bernold";
         usuario_3.last_name = "Abarca Zúñiga";
         usuario_3.password = "bernold1";
-        usuario_3.email = "bernoldaz.com";
+        usuario_3.email = "bernoldaz@gmail.com";
         usuario_3.telefono = 70132088;
         string[] memory rrss3 = new string[](2);
         rrss3[0] = "Facebook: bernoldaz";
@@ -155,7 +155,7 @@ contract ServiciosAcreditacion {
         acreditacion_.contenidos = ct;
         acreditacion_
             .descripcion = "Esta especialización está destinada a futuros desarrolladores de software con cierta experiencia en programación en al menos otro lenguaje de programación (por ejemplo, Python, C, JavaScript, etc.) que deseen poder resolver problemas más complejos utilizando a un diseño orientado a objetos con Java. Además de aprender Java, obtendrá experiencia con dos entornos de desarrollo Java (BlueJ y Eclipse), aprenderá a programar con interfaces gráficas de usuario y aprenderá a diseñar programas capaces de manejar grandes cantidades de datos. Estas habilidades de ingeniería de software son ampliamente aplicables en una amplia gama de industrias.";
-        acreditacion_.ignos = 5;
+        acreditacion_.ignos = 4;
         acreditacion_.virtus = 5;
 
         Acreditacion memory acreditacion_2;
@@ -174,7 +174,7 @@ contract ServiciosAcreditacion {
         acreditacion_2.contenidos = ct2;
         acreditacion_2
             .descripcion = "Este curso le presentará algunas de las principales áreas de investigación en filosofía contemporánea. En cada módulo, un filósofo diferente lo guiará a través de algunas de las preguntas y cuestiones más importantes en su área de especialización. Comenzaremos tratando de entender qué es la filosofía, cuáles son sus objetivos y métodos característicos, y en qué se diferencia de otros temas. Luego, pasaremos el resto del curso obteniendo una visión general introductoria de varias áreas diferentes.";
-        acreditacion_2.ignos = 5;
+        acreditacion_2.ignos = 3;
         acreditacion_2.virtus = 5;
 
         Acreditacion memory acreditacion_4;
@@ -192,7 +192,7 @@ contract ServiciosAcreditacion {
         acreditacion_4.contenidos = ct4;
         acreditacion_4
             .descripcion = "Con frecuencia damos la música por sentado en nuestra vida diaria. Pero al igual que la sociedad misma, la música tuvo un origen rudimentario que junto a esta fue evolucionando y formando parte fundamental de la identidad de muchas culturas. Cada una percibiendo la música de formas tan distintas como los instrumentos que usaban o los estilos que tocaban. En este curso pretendemos que el estudiante adquiera una apreciación por la identidad musical de las culturas más influyentes en la historia.";
-        acreditacion_4.ignos = 5;
+        acreditacion_4.ignos = 3;
         acreditacion_4.virtus = 5;
 
         Acreditacion memory acreditacion_3;
@@ -211,12 +211,12 @@ contract ServiciosAcreditacion {
         acreditacion_3.contenidos = ct3;
         acreditacion_3
             .descripcion = "En esta acreditación se busca confirmar que el aspirante posea los conocimientos necesarios fundamentales sobre el comunismo chino. Con el fin de que el aspirante sea capaz de comprender las acciones políticas realizadas por el gobierno chino actual realizadas en base a los resultados obtenidos durante toda la historia en la vida del comunismo chino. La persona que obtenga esta acreditación sea capaz de apoyar y defender el comunismo chino contemporáneo en su lucha con el capitalismo estadounidense.";
-        acreditacion_3.ignos = 5;
-        acreditacion_3.virtus = 5;
+        acreditacion_3.ignos = 3;
+        acreditacion_3.virtus = 2;
 
         Acreditacion memory acreditacion_5;
         acreditacion_5.titulo = "Ceremonia del té";
-        acreditacion_5.idAcreditacion = 3;
+        acreditacion_5.idAcreditacion = 5;
         acreditacion_5.idAcreditador = 117890661;
         acreditacion_5.conocimiento = "Arte: Ceremonias";
         acreditacion_5.tipoMedio = "Prueba práctica";
@@ -231,7 +231,7 @@ contract ServiciosAcreditacion {
         acreditacion_5
             .descripcion = "Se busca que el aspirante posea todos los conocimientos teoricos practicos acerca de los distintos elementos y procesos que son necesarios durante la elaboración de la ceremonia del té";
         acreditacion_5.ignos = 5;
-        acreditacion_5.virtus = 5;
+        acreditacion_5.virtus = 4;
 
         acreditaciones.push(acreditacion_);
         acreditaciones.push(acreditacion_2);
@@ -287,6 +287,27 @@ contract ServiciosAcreditacion {
         for (uint256 i = 0; i < acreditaciones.length; i++) {
             if (acreditaciones[i].idAcreditacion == idAcreditacion) {
                 return acreditaciones[i];
+            }
+        }
+    }
+
+    function setAceptadoRechazado(
+        uint256 idAcreditacion,
+        uint256 idAspirante,
+        uint256 aceptado
+    ) public returns (AspiranteAcreditacion memory acreditacionAspirante) {
+        for (uint256 i = 0; i < aspirantes.length; i++) {
+            if (
+                aspirantes[i].idAcreditacion == idAcreditacion &&
+                aspirantes[i].idAspirante == idAspirante
+            ) {
+                if (aceptado == 1) {
+                    aspirantes[i].resultado = "Aceptado";
+                } else {
+                    aspirantes[i].resultado = "Rechazado";
+                }
+                aspirantes[i].estado = "Finalizado";
+                return aspirantes[i];
             }
         }
     }

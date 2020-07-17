@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
     <ion-title>Aspirantes de la acreditación</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,10 +10,15 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let usuario of aspirantes">
-      <h2>{{usuario.nombre}}</h2>
-      <ion-button *ngIf="usuario.estado =='pendiente'" Slot = "end" color="primary" >Aceptar</ion-button>
-      <ion-button *ngIf="usuario.estado =='pendiente'" Slot = "end" color="danger">Rechazar</ion-button>
-      <h2 Slot = "end" *ngIf="usuario.estado !='pendiente'">Aceptado</h2>
+      <h2>{{usuario.first_name}} {{usuario.last_name}}</h2>
+      <ion-button *ngIf="usuario.estado =='No'" (click)="aceptar(usuario)" Slot="end" color="success">Aceptar
+      </ion-button>
+      <ion-button *ngIf="usuario.estado =='No'" (click)="rechazar(usuario)" Slot="end" color="danger">Rechazar
+      </ion-button>
+      <ion-button *ngIf="usuario.estado =='Si1'" Slot="end" disabled color="success">Aceptado</ion-button>
+      <ion-button *ngIf="usuario.estado =='Si2'" Slot="end" disabled color="danger">Rechazado</ion-button>
+
+      <h2 Slot="end" *ngIf="usuario.estado == 'Finalizado'">Aceptado</h2>
     </ion-item>
   </ion-list>
 

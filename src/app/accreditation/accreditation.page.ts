@@ -5,6 +5,7 @@ import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { IonContent, IonLabel } from '@ionic/angular';
 import { AcreditacionService } from '../providers/acreditacion.service';
 import { AuthService } from '../services/auth.service';
+import { BlockchainService } from '../services/blockchain/blockchain.service';
 
 @Component({
   selector: 'app-accreditation',
@@ -33,9 +34,10 @@ export class AccreditationPage implements OnInit {
   acreditador = false;
   soyYo = false;
   terminada: any = 0;
+  aproved = false;
   
 
-  constructor(private activatedRoute: ActivatedRoute, private  acreditacionService:AcreditacionService, private authService: AuthService) { }
+  constructor(private activatedRoute: ActivatedRoute, private blockchain: BlockchainService, private  acreditacionService:AcreditacionService, private authService: AuthService) { }
   ngOnInit() {
     if (document.body.offsetWidth < 360) { // 768px portrait
       this.mobile = true;
@@ -63,15 +65,26 @@ export class AccreditationPage implements OnInit {
       this.acreditador = this.authService.acreditador;
       this.soyYo = this.authService.actualUser.cedula == this.usuario.cedula;
       
-      this.acreditacionService.getAspiranteAcreditacion(this.idAcreditacion, this.usuario.cedula).then(res => {
+      this.acreditacionService.getAspiranteAcreditacion(this.idAcreditacion, this.authService.actualUser.cedula).then(res => {
         if (res) {
-          this.terminada = (res["estado"] == "Finalizada") ? 1: 2;
+          this.terminada = (res["estado"] == "Finalizado") ? 1: 2;
+          if (this.terminada == 1 && res["resultado"] == "Aceptado") this.aproved = true; 
+          if (this.terminada == 1 && res["resultado"] != "Aceptado") this.aproved = false;
+          console.log(this);
         }
       });
     });
   }
 
-  inscribirse(){
+  async inscribirse(){
+    await this.blockchain.initContracts();
+    await this.blockchain.agregarAspiranteAcreditacion({
+      descripcionResultado: "El curso fue aprobado con muy buenas calificaciones, logrando la comprensión de los contenidos",
+      estado: "En proceso",
+      idAcreditacion: this.idAcreditacion,
+      idAspirante: this.authService.actualUser.cedula,
+      resultado: "",
+    });
     this.terminada = 2;
   }
 }

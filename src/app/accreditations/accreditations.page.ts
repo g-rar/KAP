@@ -74,8 +74,6 @@ menuAreaDatos(area,conocimientoIndex){
 
   buscarAcreditacion(event){
     
-    
-    
     let texto=event.target.value;
     
     if(this.texto2===texto){

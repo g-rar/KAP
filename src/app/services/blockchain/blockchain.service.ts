@@ -12,7 +12,7 @@ export class BlockchainService {
   contratoUsuario:any;
   contratoAcreditacion:any;
   terminado = false;
-  cuenta = "0x0Cb21583b0F32AF4b57D9B626511296caF95b1Dd";
+  cuenta = "0x000763B52FC002bb593EB17B92c4Ed3F155c5Bbd";
   
   constructor(private w3 : Web3Service) {
   }
@@ -77,6 +77,10 @@ export class BlockchainService {
   async getAspirantesPorAcreditacion(idAcreditacion) {
     const aspirantes = await this.contratoAcreditacion.getAspirantesPorAcreditacion(idAcreditacion);
     return aspirantes;
+  }
+
+  async setAceptadoRechazado(idAcreditacion, idAspirante, aceptado) {
+    await this.contratoAcreditacion.setAceptadoRechazado.sendTransaction(idAcreditacion, idAspirante, aceptado, {from: this.cuenta});   
   }
   
 }

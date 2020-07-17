@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {MenuController} from '@ionic/angular'
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {MenuController} from '@ionic/angular'
 })
 export class UsermenuPage implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private menuCtrl: MenuController) {
+  constructor(private activatedRoute: ActivatedRoute, private auth: AuthService, private menuCtrl: MenuController) {
     this.menuCtrl.enable(true,'menuContent');
    }
 

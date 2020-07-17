@@ -58,7 +58,7 @@ const routes: Routes = [
     loadChildren: () => import('./formularios/form-virtus/form-virtus.module').then( m => m.FormVirtusPageModule)
   },
   {
-    path: 'lista-aspirantes',
+    path: 'lista-aspirantes/:id',
     loadChildren: () => import('./lista-aspirantes/lista-aspirantes.module').then( m => m.ListaAspirantesPageModule)
   },
   {
